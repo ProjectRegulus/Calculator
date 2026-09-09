@@ -1,1 +1,5 @@
-{ "integrations": { "ghlWebhookUrl": "https://services.leadconnectorhq.com/hooks/XXXX" } }
+{
+  "integrations": {
+    "ghlWebhookUrl": "https://services.leadconnectorhq.com/hooks/oJdvQ2qiJngGbM2nHZmD/webhook-trigger/3fa2ff24-8fdf-49fb-80b1-62949f8a6501"
+  }
+}

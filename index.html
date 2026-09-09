@@ -5,6 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>One App — Cleaning Price Calculator</title>
 <meta name="description" content="Tell us what you need, get your price. Low, Recommended and Premium options for standard, deep, move-in/move-out, post-construction and commercial cleaning.">
+<meta name="theme-color" content="#12a3b8">
+<link rel="icon" href="data:,">
 <style>
 :root{--bg:#f4f9fa;--surface:#fff;--ink:#12303a;--ink2:#4a6470;--ink3:#7d929b;--line:#dfe9ec;--line2:#c3d4d9;--aqua:#12a3b8;--aqua2:#0c7f90;--aquasoft:#e3f5f8;--ok:#1f7a4d;--warn:#9a6700;--warnsoft:#fff6dc;--danger:#b42318;--dangersoft:#fdecea;--r:12px;--rs:8px;--font:"IBM Plex Sans","Segoe UI",Roboto,Helvetica,Arial,sans-serif}
 *{box-sizing:border-box}html,body{margin:0;min-height:100%}
@@ -55,9 +57,10 @@ main{max-width:760px;margin:0 auto;padding:20px 16px 110px}
 </head>
 <body>
 <header class="top"><div class="top-in"><button class="brand" data-action="restart">One App<small id="brand-sub"></small></button><div class="right"><button class="lang" data-lang="en" aria-pressed="true">EN</button><button class="lang" data-lang="es" aria-pressed="false">ES</button></div></div></header>
-<main id="app"></main>
+<main id="app"><noscript><p style="padding:24px;font-family:sans-serif">This calculator needs JavaScript enabled.</p></noscript></main>
 <script>
 'use strict';
+const APP_VERSION = '1.1.0';
 /* =====================================================================================
    ONE APP — CLEANING PRICE CALCULATOR
    One file, three layers:
@@ -359,7 +362,7 @@ function renderAdmin(){ const L=t().admin, r=S.result, d=r&&r.debug; let calc=''
 const app = document.getElementById('app');
 function render(){ const L=t(); document.getElementById('brand-sub').textContent = L.sub; document.documentElement.lang = S.lang; document.querySelectorAll('.lang').forEach(b=>b.setAttribute('aria-pressed',b.dataset.lang===S.lang));
   if(!S.q) S.q = newQuote(); const sc = screens(S.q), key = sc[Math.min(S.step,sc.length-1)], isResult = key==='result', errs = S.errors.map(e=>L.errs[e]).filter(Boolean);
-  app.innerHTML = `<div class="progress"><span>${L.progress.replace('{n}',S.step+1).replace('{t}',sc.length)}</span><span class="bar"><i style="width:${(S.step+1)/sc.length*100}%"></i></span></div>${errs.length?`<div class="err" role="alert">${errs.map(esc).join(' ')}</div>`:''}<div data-screen="${key}">${renderScreen(key)}</div>${S.admin?renderAdmin():''}
+  app.innerHTML = `<div class="progress"><span>${L.progress.replace('{n}',S.step+1).replace('{t}',sc.length)}</span><span class="bar"><i style="width:${(S.step+1)/sc.length*100}%"></i></span></div>${errs.length?`<div class="err" role="alert" aria-live="assertive">${errs.map(esc).join(' ')}</div>`:''}<div data-screen="${key}">${renderScreen(key)}</div>${S.admin?renderAdmin():''}
 <div class="nav"><div class="nav-in">${S.step>0?`<button type="button" class="btn btn-ghost" data-action="back">${L.back}</button>`:''}${isResult?`<button type="button" class="btn btn-primary" data-action="restart">${L.startOver}</button>`:key==='service'?'':`<button type="button" class="btn btn-primary" data-action="next">${sc[S.step+1]==='result'?L.getPrice:L.next}</button>`}</div></div>`;
   window.scrollTo({top:0}); }
 const getP = (o,p) => p.split('.').reduce((a,k)=>a?.[k],o); function setP(o,p,v){ const ks=p.split('.'); let c=o; for(let i=0;i<ks.length-1;i++){ if(c[ks[i]]==null) c[ks[i]]={}; c=c[ks[i]]; } c[ks[ks.length-1]]=v; }
@@ -391,6 +394,7 @@ document.addEventListener('change', e => { const el = e.target;
   if(el.dataset.sel){ setP(S.q, el.dataset.sel, el.value); return; }
   if(el.dataset.cfgsel){ setP(S.cfgDraft, el.dataset.cfgsel, el.value); render(); return; }
   if(el.dataset.cfgbool){ setP(S.cfgDraft, el.dataset.cfgbool, el.checked); return; } });
+document.addEventListener('keydown', e => { if(e.key==='Enter' && e.target.matches('input[data-num], input[data-text]') && !S.admin){ e.preventDefault(); next(); } });
 document.addEventListener('submit', e => { if(e.target.dataset.form==='custom'){ e.preventDefault(); S.sent=true; /* hook: send {name, phone, email, quote: S.q} to One App CRM / GHL */ render(); } });
 window.addEventListener('hashchange', () => { S.admin = location.hash==='#admin'; render(); });
 render();

@@ -1,0 +1,716 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Cleaning Estimate</title>
+<meta name="description" content="Tell us what you need, get your price. Low, Recommended and Premium options for standard, deep, move-in/move-out, post-construction and commercial cleaning.">
+<meta name="theme-color" content="#ffffff">
+<link rel="icon" href="data:,">
+<style>
+:root{
+  --paper:#fafafa;--white:#ffffff;
+  --ink:#111111;--ink-2:#5c5c5c;--ink-3:#8f8f8f;
+  --line:#e7e7e7;--line-2:#d2d2d2;--line-3:#aeaeae;
+  --font:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  --serif:ui-serif,"New York",Georgia,"Times New Roman",serif;
+  --r:3px;--rs:5px;--maxw:640px;
+}
+*{box-sizing:border-box}html,body{margin:0;min-height:100%}
+body{font-family:var(--font);font-size:16px;line-height:1.5;color:var(--ink);background:var(--paper);-webkit-font-smoothing:antialiased;font-variant-numeric:tabular-nums}
+h1,h2,h3{margin:0;font-weight:500;font-family:var(--serif);letter-spacing:-.005em}h1{font-size:24px;line-height:1.3}h2{font-size:19px;line-height:1.35}h3{font-size:15px;font-family:var(--font);font-weight:600}p{margin:0}button{font:inherit}
+:focus-visible{outline:2px solid var(--ink);outline-offset:2px}
+.top{background:var(--white);border-bottom:1px solid var(--line);position:sticky;top:0;z-index:10}
+.top-in{max-width:var(--maxw);margin:0 auto;padding:0 16px;height:52px;display:flex;align-items:center;gap:12px}
+.brand{background:none;border:0;padding:0;cursor:pointer;display:flex;align-items:center}
+.brand small{color:var(--ink-2);font-weight:500;letter-spacing:.01em;font-size:13px}
+.top .right{margin-left:auto;display:flex;gap:6px;align-items:center}
+.lang{border:1px solid var(--line-2);background:var(--white);border-radius:999px;padding:5px 10px;font-size:12.5px;cursor:pointer;color:var(--ink-2)}.lang[aria-pressed=true]{background:var(--ink);color:#fff;border-color:var(--ink)}
+main{max-width:var(--maxw);margin:0 auto;padding:22px 16px 112px}
+.progress{display:flex;align-items:center;gap:12px;color:var(--ink-3);font-size:12.5px;margin-bottom:22px}.progress .bar{flex:1;height:2px;background:var(--line);overflow:hidden}.progress .bar i{display:block;height:100%;background:var(--ink);transition:width .25s ease}
+.q{font-family:var(--serif);font-size:23px;font-weight:500;line-height:1.35;margin-bottom:6px;letter-spacing:-.005em}.qh{color:var(--ink-2);margin-bottom:20px;font-size:14.5px}
+.opts{display:grid;gap:8px}.opt{display:flex;align-items:center;justify-content:space-between;gap:12px;width:100%;text-align:left;background:var(--white);border:1px solid var(--line-2);border-radius:var(--rs);padding:15px 17px;font-size:15.5px;font-weight:450;color:var(--ink);cursor:pointer;min-height:56px;transition:border-color .12s,box-shadow .12s}
+.opt:hover{border-color:var(--ink-3)}.opt[aria-pressed=true]{border-color:var(--ink);box-shadow:inset 0 0 0 1px var(--ink)}.opt .d{display:block;font-weight:400;color:var(--ink-2);font-size:13.5px;margin-top:2px}.opt .tick{width:20px;height:20px;border-radius:50%;border:1px solid var(--line-2);flex:none;display:grid;place-items:center;font-size:11px;color:transparent}.opt[aria-pressed=true] .tick{background:var(--ink);border-color:var(--ink);color:#fff}
+.opts.two{grid-template-columns:repeat(auto-fill,minmax(190px,1fr))}
+.field{display:grid;gap:6px;margin-top:14px}.field label{font-size:13.5px;font-weight:500;color:var(--ink-2)}.hint{font-size:12.5px;color:var(--ink-3)}
+.input,.select{width:100%;min-height:48px;padding:10px 13px;border:1px solid var(--line-2);border-radius:var(--rs);background:var(--white);color:var(--ink);font:inherit;font-size:16px}
+.input:focus,.select:focus{outline:none;border-color:var(--ink);box-shadow:0 0 0 3px rgba(0,0,0,.06)}
+.affix{position:relative}.affix .input{padding-right:68px}.affix span{position:absolute;right:14px;top:50%;transform:translateY(-50%);color:var(--ink-3);font-size:13.5px}
+.sub{background:transparent;border-top:1px solid var(--line);padding:10px 0 0;margin-top:10px;display:grid;gap:8px}.sub .t{font-weight:500;font-size:14px;color:var(--ink-2)}
+.chips{display:flex;flex-wrap:wrap;gap:8px}.chip{border:1px solid var(--line-2);background:var(--white);border-radius:999px;padding:8px 13px;font-size:14px;color:var(--ink-2);cursor:pointer;min-height:40px}.chip[aria-pressed=true]{background:var(--ink);color:#fff;border-color:var(--ink)}
+.qty{width:86px;min-height:40px;padding:6px 10px;font-size:15px}
+.nav{position:fixed;left:0;right:0;bottom:0;background:rgba(255,255,255,.92);backdrop-filter:blur(8px);border-top:1px solid var(--line);padding:12px 16px calc(12px + env(safe-area-inset-bottom))}.nav-in{max-width:var(--maxw);margin:0 auto;display:flex;gap:10px}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:0 20px;border-radius:var(--rs);border:1px solid var(--line-2);background:var(--white);color:var(--ink);cursor:pointer;font-weight:500;font-size:15px;flex:1}
+.btn-primary{background:var(--ink);border-color:var(--ink);color:#fff}.btn-primary:hover{background:#000}.btn:disabled{opacity:.4;cursor:not-allowed}.btn-ghost{border-color:transparent;background:transparent;color:var(--ink-2);flex:0 0 auto}.btn-sm{min-height:34px;font-size:13.5px;padding:0 12px;flex:0 0 auto}
+.err{border-left:2px solid var(--ink);background:var(--white);color:var(--ink);padding:10px 14px;font-size:13.5px;margin-bottom:16px}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:18px 0}
+.pcard{background:var(--white);border:1px solid var(--line);border-radius:var(--r);padding:22px 14px;text-align:center;display:grid;gap:4px;align-content:start}
+.pcard .tier{font-size:13px;font-weight:500;color:var(--ink-2)}.pcard .name:not(:empty){font-size:12.5px;color:var(--ink-3);margin-top:-2px}.pcard .amt{font-family:var(--serif);font-size:32px;font-weight:500;letter-spacing:-.02em;margin:8px 0 2px;color:var(--ink)}.pcard .unit{font-size:12.5px;color:var(--ink-3)}
+.pcard.rec{background:var(--ink);border-color:var(--ink);box-shadow:0 12px 28px rgba(0,0,0,.16)}.pcard.rec .tier{color:rgba(255,255,255,.7)}.pcard.rec .amt{color:#fff}.pcard.rec .unit{color:rgba(255,255,255,.55)}.pcard.rec .name:not(:empty){color:rgba(255,255,255,.5)}
+.summary{border-top:1px solid var(--line);padding-top:16px;margin-top:6px}.summary dl{display:grid;grid-template-columns:max-content 1fr;gap:9px 16px;margin:0;font-size:14.5px}.summary dt{color:var(--ink-3)}.summary dd{margin:0;color:var(--ink)}
+.note{font-size:12.5px;color:var(--ink-3);margin-top:14px}
+.custom{border-top:2px solid var(--ink);padding-top:18px;margin-top:12px}.custom h2{margin-bottom:6px}
+.callout{background:var(--white);border-left:2px solid var(--line-3);padding:12px 14px;font-size:13.5px;margin-top:12px;color:var(--ink-2)}
+.admin{margin-top:28px;border-top:1px dashed var(--line-3);padding-top:20px}.adm-h{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:10px}
+.dbg{width:100%;border-collapse:collapse;font-size:13.5px;background:var(--white);border:1px solid var(--line)}.dbg td{padding:8px 12px;border-bottom:1px solid var(--line)}.dbg td:last-child{text-align:right;white-space:nowrap}.dbg tr.t td{font-weight:600;border-top:2px solid var(--ink)}.dbg .n{display:block;color:var(--ink-3);font-size:11.5px}
+.cfg{width:100%;border-collapse:collapse;font-size:13.5px}.cfg th,.cfg td{text-align:left;padding:7px 8px 7px 0;border-bottom:1px solid var(--line)}.cfg th{font-weight:500;color:var(--ink-3);font-size:11.5px}.cfg .input{min-height:34px;font-size:13.5px;padding:4px 8px;max-width:130px}
+.panel{background:var(--white);border:1px solid var(--line);margin-top:12px}.ph{padding:12px 16px;border-bottom:1px solid var(--line);font-weight:500;display:flex;justify-content:space-between;align-items:center;gap:8px;flex-wrap:wrap}.pb{padding:12px 16px;overflow-x:auto}
+.tabs{display:flex;gap:6px;overflow-x:auto;padding-bottom:4px}.tabs button{border:1px solid var(--line-2);background:var(--white);border-radius:999px;padding:6px 12px;font-size:12.5px;cursor:pointer;white-space:nowrap;color:var(--ink-2)}.tabs button[aria-current=true]{background:var(--ink);color:#fff;border-color:var(--ink)}
+.json{font-family:ui-monospace,Menlo,monospace;font-size:12px;min-height:300px}
+.muted{color:var(--ink-3)}.small{font-size:12.5px}.row{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+@media(max-width:560px){.cards{grid-template-columns:1fr;gap:8px}.pcard{display:grid;grid-template-columns:1fr auto;text-align:left;align-items:center;padding:16px 18px}.pcard .amt{grid-column:2;grid-row:1/span 3;margin:0;font-size:27px}.pcard.rec{order:-1}.pcard.rec .amt{font-size:30px}}
+@media(prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+<header class="top"><div class="top-in"><button class="brand" data-action="restart"><small id="brand-sub"></small></button><div class="right"><button class="lang" data-lang="en" aria-pressed="true">EN</button><button class="lang" data-lang="es" aria-pressed="false">ES</button></div></div></header>
+<main id="app"><noscript><p style="padding:24px;font-family:sans-serif">This calculator needs JavaScript enabled.</p></noscript></main>
+<script>
+'use strict';
+const APP_VERSION = '2.0.0';
+/* =====================================================================================
+   ONE APP — CLEANING PRICE CALCULATOR
+   One file, three layers:
+     1. pricingConfig        — the company's data (this is the DEFAULT tenant; replace per company later)
+     2. Pricing engine       — calculateQuote() and its helper functions (no UI, no DOM)
+     3. Customer quote wizard + hidden admin/debug view (open with #admin)
+   Multi-tenant: loadCompanyConfig(companyId) is the single hook that will read from Supabase.
+   ===================================================================================== */
+
+/* ---------------------------------------------------------------- 1. PRICING CONFIG */
+const T = [1000,1500,2000,2500,3000,3500,4000,4500,5000]; // square-footage tier ceilings
+const DEFAULT_PRICING_CONFIG = {
+  companyId: 'default', companyName: 'Cleaning Company', currency: 'USD',
+  baseMarket: 'TX',
+  pricingTiers: { low: 0.80, recommended: 1.00, premium: 1.15 },
+  tierWording: { showPercentages: false },            // company may enable "20% less / 15% more" wording
+  services: { standard:{active:true}, deep:{active:true}, moveInOut:{active:true}, postConstruction:{active:true}, commercial:{active:true}, propertyManagement:{active:true} },
+  // Research-based initial factors (BLS-anchored). Texas = reference market. Editable per company.
+  stateFactors: {
+    // Recalibrated against 2026 published regional cleaning-market and cost-of-living patterns
+    // (BEA regional price parities + industry rate surveys). TX is this company's base market (1.000);
+    // every other state is relative to it. These remain CLEANCORE-style configuration defaults —
+    // not permanent market truth — and are fully editable in #admin → State & market.
+    TX:1.000, MO:0.97, NM:0.96, SD:0.96, ND:0.97, IA:0.94, NE:0.95, KS:0.93, OK:0.86,
+    KY:0.83, AL:0.84, AR:0.82, LA:0.85, WV:0.83, MS:0.81, TN:0.90, SC:0.90, GA:0.97,
+    NC:0.96, IN:0.95, OH:0.96, MI:0.98, WI:0.99, MN:1.10, ID:0.97, WY:0.97, MT:0.98, UT:1.02,
+    FL:1.06, AZ:1.10, NV:1.10, PA:1.05, DE:1.10, ME:1.06, NH:1.14, VT:1.12,
+    IL:1.10, RI:1.12, VA:1.10, MD:1.16, CO:1.15, OR:1.16, CT:1.22, NJ:1.25, MA:1.32,
+    NY:1.30, AK:1.22, WA:1.26, HI:1.46, CA:1.48, DC:1.50
+  },
+  marketFactors: { default: 1.00 },                    // city / market layer, e.g. { 'AUSTIN': 1.05 }
+  conditionFactors: { normal:1.00, moderate:1.10, heavy:1.20, veryHeavy:1.30, extreme:'review' },
+  // Company base pricing = RECOMMENDED level. Source of truth. Rows follow the tier ceilings in T.
+  standardPricing: { initial:[200,225,250,300,350,400,450,500,550], weekly:[100,120,140,165,195,225,255,285,315], biWeekly:[110,125,150,180,210,240,275,305,340], monthly:[125,140,165,200,235,270,305,340,375] },
+  frequencyFallback: { weekly:0.80, biWeekly:0.85, monthly:1.00 }, // used only when a table cell is missing
+  deepPricing: [250,300,350,425,500,575,650,725,800],
+  moveOutPricing: [300,350,400,475,550,625,700,775,850],
+  moveInFactor: 0.90,                                   // validated: move-in still needs full detail on an empty unit (cabinets, drawers, appliances) — labor is close to move-out, not dramatically lower, so a modest 10% reduction (reflecting no active-tenant soil/residue) is the defensible number, not an arbitrary round figure.
+  over5000: { ratePerExtraSqFt:{ initial:0.10, weekly:0.08, biWeekly:0.085, monthly:0.10, deep:0.20, moveOut:0.25 }, customQuoteAboveSqFt: 8000 },
+  // Post-construction — separate engine. Residential $/sq ft anchored on supplied proposals
+  // (1,900 SF $850; 2,500 SF $1,197; 4,500 SF $2,197). Commercial tiers anchored on ~$0.23/SF (Barnes & Noble, LA Fitness).
+  // Multi-phase split anchored on Crunch 38,884 SF: rough 0.30 / final 0.49 / touch-up 0.21 of the total (rough≈0.61×final, touch-up≈0.43×final).
+  postConstructionPricing: {
+    residentialRatePerSqFt: 0.48, residentialMinimum: 450,
+    commercialTiers: [[5000,0.45],[10000,0.33],[25000,0.23],[50000,0.22],[100000,0.20],[Infinity,0.18]], commercialMinimum: 650,
+    phaseFactors: { final:1.00, finalTouchUp:0.43, multiPhase:2.04 },
+    conditionFactors: { lightDust:0.90, normalDust:1.00, heavyDust:1.15, heavyResidue:1.30 },
+    options: { windows:{type:'percent',value:0.15}, cabinets:{type:'flat',value:90}, garage:{type:'flat',value:75}, patio:{type:'flat',value:250}, floorCare:{type:'perSqFt',value:0.12,minimum:150}, adhesiveRemoval:{type:'percent',value:0.06}, paintResidue:{type:'percent',value:0.08}, additionalTouchUp:{type:'percent',value:0.15} },
+    customQuote: { residentialMaxSqFt:10000, commercialMaxSqFt:120000, heavyResidueMultiPhase:true, floorCareAboveSqFt:30000 } },
+  // Commercial — recurring. Per-visit $/sq ft by visits per week, anchored on supplied proposals
+  // (LVC 7,800 SF 5×/wk $3,200/mo; PHNX 1,000 SF weekly $150/visit). Editable.
+  commercialPricing: { ratePerSqFtPerVisit:{ 1:0.030, 2:0.024, 3:0.021, 5:0.019 }, minimumVisitPrice:150, weeksPerMonth:4.33, customQuoteAboveSqFt:60000 },
+  // Windows — one model at a time: 'percent' package or 'perWindow'
+  windowPricing: { mode:'percent', packagePercent:0.15, perWindow:{ interior:10, interiorExterior:16 }, accessibility:{ standard:1.00, secondFloor:1.25, highAccess:'review' } },
+  // Carpet — priced ONLY by carpet square footage (never the house square footage)
+  carpetPricing: { mode:'sqft', ratePerSqFt:{ low:0.25, recommended:0.35, premium:0.50 }, conditionFactors:{ normal:1.00, heavySoil:1.20, petOdor:1.30 }, minimum:75,
+    perRoom:{ room:40, hallway:20, landing:5, stairs:4 } },
+  // Current company add-ons (configurable objects)
+  addOns: [
+    {id:'extraHeavyDuty',name:'Extra Heavy Duty',category:'intensity',price:150,pricingType:'flat',unit:'job',active:true,applicableServices:['standard','deep','moveInOut'],stateAdjustmentEnabled:true,marketAdjustmentEnabled:true,description:'Extra labor for neglected or heavily soiled homes'},
+    {id:'fridge',name:'Inside Fridge',category:'kitchen',price:50,pricingType:'each',unit:'each',active:true,applicableServices:['standard','deep','moveInOut'],stateAdjustmentEnabled:true,marketAdjustmentEnabled:true,description:'Interior refrigerator cleaning'},
+    {id:'oven',name:'Inside Oven',category:'kitchen',price:50,pricingType:'each',unit:'each',active:true,applicableServices:['standard','deep','moveInOut'],stateAdjustmentEnabled:true,marketAdjustmentEnabled:true,description:'Interior oven cleaning'},
+    {id:'eco',name:'Eco-Friendly Products',category:'products',price:100,pricingType:'flat',unit:'job',active:true,applicableServices:['standard','deep','moveInOut','commercial'],stateAdjustmentEnabled:false,marketAdjustmentEnabled:false,description:'Green cleaning products'},
+    {id:'pets',name:'Pet(s)',category:'home',price:15,pricingType:'each',unit:'pet',active:true,applicableServices:['standard','deep','moveInOut'],stateAdjustmentEnabled:true,marketAdjustmentEnabled:true,description:'Pet hair and dander attention'},
+    {id:'interiorWalls',name:'Interior Walls',category:'detail',price:60,pricingType:'flat',unit:'job',active:true,applicableServices:['deep','moveInOut'],stateAdjustmentEnabled:true,marketAdjustmentEnabled:true,description:'Wall wipe-down'},
+    {id:'blinds',name:'Detail Window Blinds',category:'detail',price:10,pricingType:'each',unit:'each',active:true,applicableServices:['standard','deep','moveInOut'],stateAdjustmentEnabled:true,marketAdjustmentEnabled:true,description:'Per blind'},
+    {id:'baseboards',name:'Detail Baseboards',category:'detail',price:60,pricingType:'flat',unit:'job',active:true,applicableServices:['standard','deep','moveInOut'],stateAdjustmentEnabled:true,marketAdjustmentEnabled:true,description:'Hand-detailed baseboards'},
+    {id:'mattress',name:'Clean & Refresh Mattress',category:'bedroom',price:30,pricingType:'each',unit:'each',active:true,applicableServices:['deep','moveInOut'],stateAdjustmentEnabled:true,marketAdjustmentEnabled:true,description:'Per mattress'},
+    {id:'cabinetsEmpty',name:'Inside Cabinets (Empty)',category:'kitchen',price:60,pricingType:'flat',unit:'job',active:true,applicableServices:['deep','moveInOut'],stateAdjustmentEnabled:true,marketAdjustmentEnabled:true,description:'Empty cabinet interiors'},
+    {id:'cabinetsFull',name:'Inside Cabinets (Full)',category:'kitchen',price:90,pricingType:'flat',unit:'job',active:true,applicableServices:['standard','deep'],stateAdjustmentEnabled:true,marketAdjustmentEnabled:true,description:'Cabinet interiors with contents'},
+    {id:'dishes',name:'Wash Dishes',category:'kitchen',price:25,pricingType:'each',unit:'load',active:true,applicableServices:['standard','deep'],stateAdjustmentEnabled:true,marketAdjustmentEnabled:true,description:'Per load'},
+    {id:'washerDryer',name:'Inside Washer & Dryer',category:'laundry',price:30,pricingType:'flat',unit:'job',active:true,applicableServices:['deep','moveInOut'],stateAdjustmentEnabled:true,marketAdjustmentEnabled:true,description:'Interior appliance cleaning'},
+    {id:'moldMildew',name:'Mold / Mildew Treatment',category:'bathroom',price:30,pricingType:'each',unit:'bathroom',active:true,applicableServices:['deep','moveInOut'],stateAdjustmentEnabled:true,marketAdjustmentEnabled:true,description:'Per bathroom'},
+    {id:'patioFurniture',name:'Patio Furniture Dust & Wipe',category:'exterior',price:25,pricingType:'flat',unit:'job',active:true,applicableServices:['standard','deep'],stateAdjustmentEnabled:true,marketAdjustmentEnabled:true,description:'Outdoor furniture'},
+    {id:'garage',name:'Sweep Inside Garage',category:'exterior',price:50,pricingType:'flat',unit:'job',active:true,applicableServices:['deep','moveInOut'],stateAdjustmentEnabled:true,marketAdjustmentEnabled:true,description:'Garage floor sweep'},
+    {id:'basement',name:'Basement',category:'home',price:50,pricingType:'flat',unit:'job',active:true,applicableServices:['standard','deep','moveInOut'],stateAdjustmentEnabled:true,marketAdjustmentEnabled:true,description:'Finished basement'},
+    {id:'disinfection',name:'Disinfection / Sanitization',category:'health',price:100,pricingType:'flat',unit:'job',active:true,applicableServices:['standard','deep','moveInOut','commercial'],stateAdjustmentEnabled:true,marketAdjustmentEnabled:true,description:'EPA-registered disinfection'},
+    {id:'carpetRoom',name:'Carpet Washing (Room)',category:'carpet',price:40,pricingType:'each',unit:'room',active:true,applicableServices:[],stateAdjustmentEnabled:true,marketAdjustmentEnabled:true,description:'Per-room model (enable carpetPricing.mode = perRoom)'},
+    {id:'carpetHallway',name:'Carpet Washing (Hallway)',category:'carpet',price:20,pricingType:'each',unit:'hallway',active:true,applicableServices:[],stateAdjustmentEnabled:true,marketAdjustmentEnabled:true,description:'Per-room model'},
+    {id:'carpetLanding',name:'Carpet Washing (Landing)',category:'carpet',price:5,pricingType:'each',unit:'landing',active:true,applicableServices:[],stateAdjustmentEnabled:true,marketAdjustmentEnabled:true,description:'Per-room model'},
+    {id:'carpetStairs',name:'Carpet Washing (Stairs)',category:'carpet',price:4,pricingType:'each',unit:'step',active:true,applicableServices:[],stateAdjustmentEnabled:true,marketAdjustmentEnabled:true,description:'Per-room model'},
+    {id:'rug',name:'Rug Cleaning',category:'carpet',price:10,pricingType:'each',unit:'rug',active:true,applicableServices:['standard','deep','moveInOut'],stateAdjustmentEnabled:true,marketAdjustmentEnabled:true,description:'Per rug'},
+    {id:'breakroom',name:'Break Room Deep Clean',category:'commercial',price:75,pricingType:'flat',unit:'visit',active:true,applicableServices:['commercial'],stateAdjustmentEnabled:true,marketAdjustmentEnabled:true,description:'Kitchen / break room detail'},
+    {id:'restroomRestock',name:'Restroom Restocking',category:'commercial',price:45,pricingType:'flat',unit:'month',active:true,applicableServices:['commercial'],stateAdjustmentEnabled:false,marketAdjustmentEnabled:false,description:'Consumables supplied and restocked'}
+  ],
+  // Profitability floor — internal only
+  profitability: { minimumJobPrice:120, minimumHourlyRevenue:40, laborCostPerHour:22.5, overheadPercent:0.25, targetMargin:0.25, minimumPostConstructionPrice:450, minimumCommercialVisit:150,
+    productionSqFtPerHour:{ standard:550, initial:400, deep:250, moveInOut:200, postConstructionResidential:165, postConstructionCommercial:250, commercial:2800 }, frequencyHourDivisors:{ weekly:1.2, biWeekly:1.15 } }, // floor sits below the company tables (7FC breakeven ≈ $40/hr)
+  // Property Management — first-class B2B service (community / turnover / day porter / add-ons).
+  // PRICING RULE: no proposal prices are hardcoded. Any rate left at 0 is a configuration placeholder;
+  // the engine then derives a cost-plus rate from the company's own profitability settings
+  // (labor cost × (1 + overhead) ÷ (1 − target margin), never below minimum hourly revenue) until the admin sets it.
+  propertyManagementPricing: {
+    weeksPerMonth: 4.33,
+    community: {
+      pricingMethod: 'staffing',            // 'staffing' = labor hours × bill rate · 'perUnit' = units × per-unit monthly rate
+      hourlyBillRate: 0,                    // 0 = derive from profitability settings
+      perUnitMonthlyRate: 0,                // 0 = derive (falls back to staffing)
+      minimumMonthlyPrice: 0,
+      frequencyMultipliers: { 1:1.00, 2:1.00, 3:1.00, 5:1.00, 6:1.00, 7:1.00, custom:1.00 },
+      staffing: { defaultCleaners:1, defaultHoursPerDay:4, backupCoverageFactor:1.05, dedicatedStaffFactor:1.05, supervisionFactor:1.03 },
+      // minutes per visit by area — used to SUGGEST hours per visit (editable)
+      areaMinutesPerVisit: { mainLobby:30, leasingOffice:30, managementOffice:20, maintenanceOffice:15, maintenanceRoom:15, clubhouse:40, communityRoom:30, coworking:25, conferenceRoom:15, mailroom:15, packageRoom:15, fitnessCenter:40, communityRestrooms:30, residentHallways:60, stairwells:30, elevators:15, elevatorLandings:20, trashRooms:20, trashChuteRooms:20, storageRooms:10, bikeRooms:10, modelApartment:30, modelHome:45, poolArea:30, poolDeck:25, amenityDeck:25, courtyards:20, outdoorCommon:20, petAreas:15, petWash:15, garageAreas:20, otherCommon:20 },
+      unitMinutesPerVisit: 0.15,            // extra minutes per unit per visit (hallway / trash volume)
+      // labor hours per occurrence for periodic tasks (editable)
+      periodicTaskHours: { fullHallwayVacuum:3, stairwellCleaning:2, highDusting:2, ceilingVents:1.5, airReturns:1, baseboards:2, deepFloor:4, cornersEdges:1.5, deepTrashRoom:1.5, deepTrashChute:1.5, storageRoom:1, bikeRoom:1, garageArea:2, interiorWindows:2, exteriorWindows:3, modelApartment:2, modelHome:3, grill:1, spa:1.5, poolDetail:2 },
+      customQuote: { maxUnits:800, maxCommonAreaSqFt:150000, maxCleaners:8 } },
+    turnover: {
+      apartment:{ basePrice:0 }, condo:{ basePrice:0 }, townhome:{ basePrice:0 }, managedHome:{ basePrice:0 },
+      bedroomPrice: 0, bathroomPrice: 0, squareFootPricing: { enabled:true, rate:0 },
+      turnoverTypeFactors: { light:0.80, standard:1.00, deep:1.35, moveOut:1.25, moveInReady:1.15, heavy:1.60 },
+      conditionFactors: { normal:1.00, light:0.90, moderate:1.10, heavy:1.20, veryHeavy:1.30, extreme:'review' },
+      minimumJobPrice: 0, largeUnit: { sqft:2500, factor:1.15 }, customQuoteAboveSqFt: 5000,
+      // used only when base / bedroom / bathroom / sq ft prices are all 0 (derived from labor)
+      laborHoursEstimate: { base:2, perBedroom:0.75, perBathroom:0.5, sqFtPerHour:200 } },
+    dayPorter: { hourlyRate:0, minimumWeeklyHours:10, minimumMonthlyPrice:0, customQuoteAboveWeeklyHours:80 },
+    // pricingType: perItem | perWindow | perSqFt | perRoom | perVisit | hourly | customQuote — price 0 = additional quote required (hourly derives)
+    addOns: [
+      {id:'interiorWindows',name:'Interior Window Cleaning',pricingType:'perWindow',price:0,active:true},
+      {id:'exteriorWindows',name:'Exterior Window Cleaning',pricingType:'perWindow',price:0,active:true,highAccessReview:true},
+      {id:'carpetCleaning',name:'Carpet Cleaning',pricingType:'perSqFt',price:0,active:true},
+      {id:'commonAreaCarpet',name:'Common-Area Carpet Cleaning',pricingType:'perSqFt',price:0,active:true},
+      {id:'poolDeck',name:'Pool Deck Cleaning',pricingType:'perVisit',price:0,active:true},
+      {id:'poolDetail',name:'Pool Area Detail',pricingType:'perVisit',price:0,active:true},
+      {id:'grill',name:'Community Grill Cleaning',pricingType:'perItem',price:0,active:true},
+      {id:'dogWaste',name:'Dog Waste Removal',pricingType:'perVisit',price:0,active:true},
+      {id:'petArea',name:'Pet Area Cleaning',pricingType:'perVisit',price:0,active:true},
+      {id:'pressureWashing',name:'Pressure Washing',pricingType:'perSqFt',price:0,active:true,largeThresholdSqFt:10000},
+      {id:'patio',name:'Patio Cleaning',pricingType:'perItem',price:0,active:true},
+      {id:'garage',name:'Garage Cleaning',pricingType:'perVisit',price:0,active:true},
+      {id:'trashRoomDeep',name:'Trash Room Deep Cleaning',pricingType:'perRoom',price:0,active:true},
+      {id:'trashChuteDeep',name:'Trash Chute Deep Cleaning',pricingType:'perRoom',price:0,active:true},
+      {id:'stairwellDeep',name:'Stairwell Deep Cleaning',pricingType:'perRoom',price:0,active:true},
+      {id:'modelApartment',name:'Model Apartment Cleaning',pricingType:'perItem',price:0,active:true},
+      {id:'modelHome',name:'Model Home Cleaning',pricingType:'perItem',price:0,active:true},
+      {id:'postConstruction',name:'Post-Construction Cleaning',pricingType:'customQuote',price:0,active:true},
+      {id:'handyman',name:'Handyman Services',pricingType:'hourly',price:0,active:true} ] },
+  // GoHighLevel: paste a sub-account Inbound Webhook URL (Workflows → Inbound Webhook trigger). Leads and quote requests are POSTed there as JSON.
+  // GEOGRAPHY MODEL — the raw state/market ratio is a market SIGNAL, not a multiplier applied to
+  // everything in the quote. It is converted into a controlled, capped PERCENT OF THE BASE PRICE,
+  // added alongside (never multiplied against) the condition adjustment. This is what prevents
+  // "California + heavy condition + add-ons" from compounding into a runaway price.
+  //   customerAdjustment = compress(rawDiff) × serviceSensitivity, combined state+market capped overall.
+  //   compress(): half the raw difference up to 50% away from the base market, tapering further beyond
+  //   that (curve.slope2), then hard-capped. A raw +50% market (e.g. the priciest metros) lands at
+  //   roughly +25%, matching "high-cost metros run up to ~50% above average" without passing that
+  //   premium straight through to the customer. The same compression softens discounts symmetrically —
+  //   a cleaning company still has fixed labor, insurance, and overhead costs everywhere.
+  geography: {
+    curve: { slope1: 0.50, breakpoint: 0.50, slope2: 0.15 },       // state compression curve
+    marketCurve: { slope1: 0.80, breakpoint: 0.15, slope2: 0.20 }, // city/market compresses less (premiums are smaller to start)
+    maxResidentialStateAdjustment: 0.28,   // hard ceiling, customer-facing state adjustment (increases)
+    maxResidentialDiscount: 0.20,          // hard floor, customer-facing state adjustment (decreases)
+    maxResidentialMarketAdjustment: 0.15,  // hard ceiling on the city/market layer alone
+    maxCombinedGeographicAdjustment: 0.30, // state + market together never exceed this, either direction
+    specialtyStateSensitivity: 0.30,       // add-ons feel only a fraction of the compressed state signal — they have their own price
+    // How much of the compressed state/market adjustment each service (or, for standard cleaning,
+    // each frequency) actually passes through to the customer. Recurring service is heavily
+    // insulated because customers comparison-shop ongoing costs; a one-time first clean prices the
+    // property as it actually is today, so it takes the adjustment at full strength.
+    stateSensitivity: { initial:1.00, weekly:0.60, biWeekly:0.60, monthly:0.60, deep:0.75, moveIn:0.75, moveOut:0.75, commercial:0.60, postConstruction:0.55, propertyManagement:0.65 },
+    // Condition represents extra labor, not a market signal — but a home on WEEKLY service can't
+    // realistically stay "heavy" the way a first-visit teardown can, so the price impact of a
+    // condition selection is dampened for higher-frequency recurring service. One-time services
+    // (deep, move-in/out, commercial, post-construction, PM turnover) always use the full amount —
+    // they're pricing the property's actual condition today, not an ongoing relationship.
+    conditionFrequencySensitivity: { initial:1.00, weekly:0.60, biWeekly:0.75, monthly:0.90 }
+  },
+  rounding: { exactPricing:false, step:5 }
+};
+
+/* Tenant hook: replace with a Supabase read later. Overrides are deep-merged over the default config. */
+function loadCompanyConfig(companyId='default'){ const raw = safeGet('oneapp.pricingConfig.'+companyId); const base = clone(DEFAULT_PRICING_CONFIG); if(!raw) return base; try{ return deepMerge(base, JSON.parse(raw, jsonIn)); }catch(e){ return base; } }
+function saveCompanyConfig(cfg, companyId='default'){ safeSet('oneapp.pricingConfig.'+companyId, JSON.stringify(cfg, jsonOut)); }
+const jsonOut=(k,v)=>v===Infinity?'__Infinity__':v, jsonIn=(k,v)=>v==='__Infinity__'?Infinity:v, clone=o=>JSON.parse(JSON.stringify(o,jsonOut),jsonIn);
+function deepMerge(b,p){ if(Array.isArray(p)) return p; if(b&&typeof b==='object'&&p&&typeof p==='object'&&!Array.isArray(b)){ const o={...b}; for(const k of Object.keys(p)) o[k]=deepMerge(b[k],p[k]); return o; } return p===undefined?b:p; }
+const mem={}; function safeGet(k){ try{ return localStorage.getItem(k); }catch(e){ return mem[k]??null; } } function safeSet(k,v){ try{ localStorage.setItem(k,v); }catch(e){ mem[k]=v; } } function safeDel(k){ try{ localStorage.removeItem(k); }catch(e){ delete mem[k]; } }
+
+/* ---------------------------------------------------------------- 2. PRICING ENGINE (pure functions, no DOM) */
+const num = (v,d=0) => { const n = typeof v==='number'?v:Number(v); return Number.isFinite(n)?n:d; };
+const r2 = n => Math.round(n*100)/100;
+const TIER_LABELS = ['0–1,000','1,001–1,500','1,501–2,000','2,001–2,500','2,501–3,000','3,001–3,500','3,501–4,000','4,001–4,500','4,501–5,000'];
+
+/** Returns {index, label, sqft, over} for a square-footage input. index 8 = last table row; over = sq ft beyond 5,000. */
+function findSquareFootageTier(sqft){ const s = Math.max(0,num(sqft)); for(let i=0;i<T.length;i++) if(s<=T[i]) return { index:i, label:TIER_LABELS[i], sqft:s, over:0 }; return { index:T.length-1, label:'5,001+', sqft:s, over:s-T[T.length-1] }; }
+/** State factor normalized to the company's base market. */
+function calculateStateFactor(cfg, state){ const f = cfg.stateFactors, base = num(f[cfg.baseMarket],1)||1, s = num(f[(state||'').toUpperCase()],0); return s>0 ? r2(s/base*1000)/1000 : 1; }
+function calculateMarketFactor(cfg, market){ const m = cfg.marketFactors||{}; const v = market ? m[String(market).toUpperCase()] : undefined; return num(v, num(m.default,1)); }
+function rawStateDiff(cfg, state){ return calculateStateFactor(cfg,state) - 1; }
+function rawMarketDiff(cfg, market){ return calculateMarketFactor(cfg,market) - 1; }
+/** Two-slope compression: half the raw difference up to the breakpoint, tapering further beyond it, hard-capped. */
+function compressPercent(rawDiff, curve, cap){ const sign = rawDiff<0?-1:1, x = Math.abs(rawDiff), bp = curve.breakpoint;
+  const y = x<=bp ? x*curve.slope1 : bp*curve.slope1 + (x-bp)*curve.slope2; return sign*Math.min(y, cap); }
+/** Controlled geographic adjustment as a PERCENT OF BASE (never a multiplier stacked onto condition/add-ons). */
+function geoAdjustmentPercent(cfg, service, freqKey, rawState, rawMarket){
+  const g = cfg.geography, sens = g.stateSensitivity[freqKey] ?? g.stateSensitivity[service] ?? 1;
+  const capState = rawState>=0 ? g.maxResidentialStateAdjustment : g.maxResidentialDiscount;
+  const stateAdj = compressPercent(rawState, g.curve, capState) * sens;
+  const marketAdj = compressPercent(rawMarket, g.marketCurve, g.maxResidentialMarketAdjustment);
+  const total = Math.max(-g.maxCombinedGeographicAdjustment, Math.min(g.maxCombinedGeographicAdjustment, stateAdj+marketAdj));
+  return { stateAdj, marketAdj, total };
+}
+/** A much smaller geographic nudge for add-ons — they have their own price, not the full residential swing. */
+function specialtyGeoPercent(cfg, rawState, rawMarket){
+  const g = cfg.geography, capState = rawState>=0 ? g.maxResidentialStateAdjustment : g.maxResidentialDiscount;
+  const stateAdj = compressPercent(rawState, g.curve, capState) * g.specialtyStateSensitivity;
+  const marketAdj = compressPercent(rawMarket, g.marketCurve, g.maxResidentialMarketAdjustment) * g.specialtyStateSensitivity;
+  return Math.max(-g.maxCombinedGeographicAdjustment, Math.min(g.maxCombinedGeographicAdjustment, stateAdj+marketAdj));
+}
+/** Condition as a percent-of-base labor-complexity adjustment, dampened by frequency for recurring residential. Returns 'review' for extreme. */
+function conditionAdjustmentPercent(cfg, condition, freqKey){ const raw = cfg.conditionFactors[condition]; if(raw==null) return 0; if(raw==='review') return 'review';
+  const sens = (cfg.geography.conditionFrequencySensitivity||{})[freqKey] ?? 1; return (raw-1)*sens; }
+function calculateConditionFactor(cfg, condition){ return cfg.conditionFactors[condition] ?? 1; }
+/** Explicit table cell first; frequency fallback only when a cell is missing. */
+function calculateFrequencyPrice(cfg, tierIndex, frequency){ const t = cfg.standardPricing, cell = t[frequency]?.[tierIndex]; if(Number.isFinite(cell)) return cell; const monthly = t.monthly?.[tierIndex]; return Number.isFinite(monthly) ? monthly*(cfg.frequencyFallback[frequency]??1) : 0; }
+function over5000Extra(cfg, over, key){ return over>0 ? over*(cfg.over5000.ratePerExtraSqFt[key]??0) : 0; }
+function roundCustomerPrice(cfg, n){ if(!Number.isFinite(n)||n<=0) return 0; if(cfg.rounding.exactPricing) return Math.round(n); const step = cfg.rounding.step>0?cfg.rounding.step:1; return Math.round(n/step)*step; }
+function estimateLaborHours(cfg, service, sqft, condition, frequency){ const p = cfg.profitability.productionSqFtPerHour; const key = service==='standard'&&frequency==='initial'?'initial':service; const rate = p[key]||p.standard; const div = (cfg.profitability.frequencyHourDivisors||{})[frequency]||1; return Math.max(1, sqft/rate/div) * (typeof condition==='number'?condition:1); }
+/** Floor = max(minimum job, hours × minimum hourly revenue, cost ÷ (1 − target margin)). */
+function calculateProfitabilityFloor(cfg, service, laborHours){ const p = cfg.profitability, cost = laborHours*p.laborCostPerHour*(1+p.overheadPercent); const floors=[service==='propertyManagement'&&laborHours===0?0:p.minimumJobPrice, laborHours*p.minimumHourlyRevenue, cost/(1-Math.min(p.targetMargin,.9))]; if(service==='postConstruction') floors.push(p.minimumPostConstructionPrice); if(service==='commercial') floors.push(p.minimumCommercialVisit); return Math.max(...floors.map(f=>num(f))); }
+
+function calculateWindowPrice(cfg, servicePrice, w){
+  if(!w||!w.enabled) return { amount:0, method:'none' };
+  const wp = cfg.windowPricing, access = wp.accessibility[w.access||'standard'];
+  if(access==='review') return { amount:0, method:'review', review:'highAccessWindows' };
+  if(wp.mode==='perWindow'){ const count = Math.max(0,num(w.count)), unit = wp.perWindow[w.scope==='interiorExterior'?'interiorExterior':'interior']; return { amount:count*unit*num(access,1), method:'perWindow', count, unit, access:num(access,1) }; }
+  return { amount:servicePrice*wp.packagePercent*num(access,1), method:'percent', percent:wp.packagePercent, access:num(access,1) };
+}
+/** Carpet is priced ONLY on carpet square footage. Returns amounts per pricing tier. */
+function calculateCarpetPrice(cfg, c){
+  if(!c||!c.enabled) return { low:0, recommended:0, premium:0, method:'none' };
+  const cp = cfg.carpetPricing, cond = cp.conditionFactors[c.condition||'normal']??1;
+  if(cp.mode==='perRoom'){ const r = c.rooms||{}, amt = (num(r.room)*cp.perRoom.room+num(r.hallway)*cp.perRoom.hallway+num(r.landing)*cp.perRoom.landing+num(r.stairs)*cp.perRoom.stairs)*cond; return { low:amt, recommended:amt, premium:amt, method:'perRoom', conditionFactor:cond }; }
+  const sqft = Math.max(0,num(c.sqft)); if(sqft===0) return { low:0, recommended:0, premium:0, method:'sqft', sqft:0 };
+  const at = rate => Math.max(cp.minimum, sqft*rate*cond);
+  return { low:at(cp.ratePerSqFt.low), recommended:at(cp.ratePerSqFt.recommended), premium:at(cp.ratePerSqFt.premium), method:'sqft', sqft, conditionFactor:cond };
+}
+function getApplicableAddons(cfg, service){ if(service==='propertyManagement') return cfg.propertyManagementPricing.addOns.filter(a=>a.active!==false); return cfg.addOns.filter(a=>a.active && a.applicableServices.includes(service)); }
+function calculateAddons(cfg, service, selected, rawState, rawMarket){ const lines=[]; let total=0; const geoPct = specialtyGeoPercent(cfg, rawState, rawMarket); for(const a of getApplicableAddons(cfg,service)){ const qty = num(selected&&selected[a.id]); if(qty<=0) continue; let amount = a.pricingType==='each'?a.price*qty:a.price; if(a.stateAdjustmentEnabled||a.marketAdjustmentEnabled) amount*=(1+geoPct); lines.push({ id:a.id, name:a.name, qty, amount:r2(amount) }); total+=amount; } return { total, lines }; }
+
+/** Post-construction engine — separate from residential tables. */
+function calculatePostConstructionPrice(cfg, q, factors){
+  const pc = cfg.postConstructionPricing, sqft = Math.max(0,num(q.exactSqFt)), commercial = q.pc.projectType==='commercial', cq = pc.customQuote;
+  const reasons=[]; if(sqft>(commercial?cq.commercialMaxSqFt:cq.residentialMaxSqFt)) reasons.push('sizeExceedsAutomatic'); if(cq.heavyResidueMultiPhase&&q.pc.condition==='heavyResidue'&&q.pc.phase==='multiPhase') reasons.push('heavyResidueMultiPhase'); if(q.pc.options.floorCare&&commercial&&sqft>cq.floorCareAboveSqFt) reasons.push('floorCareLargeProject');
+  if(reasons.length) return { status:'customQuote', reasons };
+  let rate, minimum; if(commercial){ const tier = pc.commercialTiers.find(t=>sqft<t[0])||pc.commercialTiers[pc.commercialTiers.length-1]; rate=tier[1]; minimum=pc.commercialMinimum; } else { rate=pc.residentialRatePerSqFt; minimum=pc.residentialMinimum; }
+  const base = Math.max(minimum, sqft*rate), phase = pc.phaseFactors[q.pc.phase]??1, cond = pc.conditionFactors[q.pc.condition]??1;
+  const scopeBase = base*phase; // phase represents genuinely different physical scope of work — kept multiplicative
+  const geoRes = geoAdjustmentPercent(cfg,'postConstruction',null,factors.rawState,factors.rawMarket), condPct = cond-1;
+  const geo = scopeBase*geoRes.total, condAdj = scopeBase*condPct;
+  let price = scopeBase + geo + condAdj;
+  const optLines=[]; for(const [k,on] of Object.entries(q.pc.options||{})){ if(!on) continue; const o = pc.options[k]; if(!o) continue; const amt = o.type==='percent'?price*o.value:o.type==='perSqFt'?Math.max(o.minimum||0,sqft*o.value):o.value; optLines.push({ id:k, amount:r2(amt) }); }
+  const opts = optLines.reduce((s,l)=>s+l.amount,0);
+  const hours = sqft/(commercial?cfg.profitability.productionSqFtPerHour.postConstructionCommercial:cfg.profitability.productionSqFtPerHour.postConstructionResidential)*phase*cond;
+  return { status:'ok', base, rate, phase, cond, geoAdj:geo, condAdj, geoPercent:geoRes.total, condPercent:condPct, options:optLines, optionsTotal:opts, subtotal:price+opts, laborHours:hours };
+}
+
+
+/** Property Management — cost-plus rate derived from the company's own profitability settings when a rate is unconfigured (0). */
+function pmDerivedRate(cfg){ const p = cfg.profitability; return Math.max(p.laborCostPerHour*(1+p.overheadPercent)/(1-Math.min(p.targetMargin,.9)), p.minimumHourlyRevenue); }
+const PM_FREQ_OCC = { daily:null, weekly:4.33, biWeekly:2.17, monthly:1, asNeeded:0 };
+function pmSuggestedHoursPerVisit(cfg, pm){ const c = cfg.propertyManagementPricing.community; let m=0; for(const a of Object.keys(pm.areas||{})) if(pm.areas[a]) m += c.areaMinutesPerVisit[a]||0; m += Math.max(0,num(pm.units))*c.unitMinutesPerVisit; return Math.max(1, Math.ceil(m/60*2)/2); }
+/** Property-management add-ons: priced by their configured method; unpriced / customQuote items are reported as "additional quote required". */
+function calculatePmAddons(cfg, pm, factors){ const lines=[], quoteRequired=[]; let total=0, review=[];
+  for(const a of cfg.propertyManagementPricing.addOns){ if(a.active===false) continue; const sel = pm.addOns?.[a.id]; if(!sel||!sel.on) continue; const qty = Math.max(1,num(sel.qty,1));
+    if(a.id==='exteriorWindows' && sel.highAccess) { review.push('highAccessWindows'); continue; }
+    if(a.largeThresholdSqFt && qty>a.largeThresholdSqFt){ review.push('largeSpecialtyProject'); continue; }
+    let unit = a.price; if(a.pricingType==='hourly' && !(unit>0)) unit = pmDerivedRate(cfg);
+    if(a.pricingType==='customQuote' || !(unit>0)){ quoteRequired.push(a.id); continue; }
+    const amount = unit*qty*(1+specialtyGeoPercent(cfg,factors.rawState,factors.rawMarket)); lines.push({ id:a.id, name:a.name, qty, amount:r2(amount), pricingType:a.pricingType }); total+=amount; }
+  return { total, lines, quoteRequired, review }; }
+/** Property Management engine branch. Returns {status, servicePrice, laborHours, meta, lines, ...}. */
+function calculatePropertyManagementPrice(cfg, q, factors){
+  const P = cfg.propertyManagementPricing, pm = q.pm, W = P.weeksPerMonth, rate = P.community.hourlyBillRate>0?P.community.hourlyBillRate:pmDerivedRate(cfg), reasons=[];
+  const addons = calculatePmAddons(cfg, pm, factors); if(addons.review.length) return { status:'review', reasons:addons.review };
+  if(pm.type==='community'){ const c = P.community, units = Math.max(0,num(pm.units)), commonSqFt = num(pm.commonAreaSqFt);
+    if(units>c.customQuote.maxUnits) reasons.push('largeProperty'); if(commonSqFt>c.customQuote.maxCommonAreaSqFt) reasons.push('largeCommonArea'); if(num(pm.cleaners)>c.customQuote.maxCleaners) reasons.push('customStaffing'); if(reasons.length) return { status:'customQuote', reasons };
+    const days = pm.frequency==='custom'?Math.max(1,Math.min(7,num(pm.daysPerWeek,5))):num(pm.frequency,5), cleaners = Math.max(1,num(pm.cleaners,c.staffing.defaultCleaners)), hpd = Math.max(0.5,num(pm.hoursPerDay,c.staffing.defaultHoursPerDay));
+    const weeklyHours = cleaners*hpd*days; let periodicMonthly=0; for(const [tid,on] of Object.entries(pm.tasks||{})){ if(!on||!(tid in c.periodicTaskHours)) continue; const f = pm.taskFreq?.[tid]||'monthly'; const occ = f==='daily'?days*W:(PM_FREQ_OCC[f]??1); periodicMonthly += c.periodicTaskHours[tid]*occ; }
+    const monthlyHours = weeklyHours*W + periodicMonthly, freqMult = c.frequencyMultipliers[pm.frequency==='custom'?'custom':days]??1, staffMult = (pm.backup?c.staffing.backupCoverageFactor:1)*(pm.dedicated?c.staffing.dedicatedStaffFactor:1)*(pm.supervision?c.staffing.supervisionFactor:1);
+    let base; if(c.pricingMethod==='perUnit' && c.perUnitMonthlyRate>0) base = units*c.perUnitMonthlyRate; else base = monthlyHours*rate;
+    const scopeBase = base*freqMult*staffMult; // frequency & staffing multipliers represent genuinely different amounts of work — kept multiplicative
+    const geoRes = geoAdjustmentPercent(cfg,'propertyManagement',null,factors.rawState,factors.rawMarket), geoDollars = scopeBase*geoRes.total;
+    const servicePrice = Math.max(c.minimumMonthlyPrice, scopeBase+geoDollars);
+    return { status:'ok', unit:'month', basePrice:base, geoAdjustment:geoDollars, conditionAdjustment:0, geoPercent:geoRes.total, servicePrice, laborHours:monthlyHours, minimum:c.minimumMonthlyPrice, addons, meta:{ days, cleaners, hoursPerDay:hpd, weeklyHours:r2(weeklyHours), monthlyHours:r2(monthlyHours), periodicMonthly:r2(periodicMonthly), visitsPerMonth:r2(days*W), rate:r2(rate), derived:!(c.hourlyBillRate>0), freqMult, staffMult, laborCost:r2(monthlyHours*cfg.profitability.laborCostPerHour) } }; }
+  if(pm.type==='turnover'){ const tv = P.turnover, sqft = Math.max(0,num(pm.sqft)), beds = Math.max(0,num(pm.bedrooms)), baths = Math.max(0,num(pm.bathrooms)), cond = tv.conditionFactors[pm.condition]??1;
+    if(cond==='review') return { status:'customQuote', reasons:['extremeCondition'] }; if(sqft>tv.customQuoteAboveSqFt) return { status:'customQuote', reasons:['largeUnit'] }; if(pm.turnType==='heavy' && (pm.condition==='veryHeavy')) return { status:'customQuote', reasons:['restorationLevel'] };
+    const typeBase = tv[pm.unitType]?.basePrice||0; let base = typeBase + beds*tv.bedroomPrice + baths*tv.bathroomPrice + (tv.squareFootPricing.enabled?sqft*tv.squareFootPricing.rate:0), derived=false, hours;
+    const est = tv.laborHoursEstimate; hours = sqft>0 ? Math.max(est.base, sqft/est.sqFtPerHour) : est.base + beds*est.perBedroom + baths*est.perBathroom;
+    if(!(base>0)){ base = hours*rate; derived=true; }
+    const typeF = tv.turnoverTypeFactors[pm.turnType]??1, largeF = sqft>=tv.largeUnit.sqft?tv.largeUnit.factor:1, afterType = base*typeF*largeF; // turn type / large-unit factors represent genuinely different scope of work — kept multiplicative
+    const geoRes = geoAdjustmentPercent(cfg,'propertyManagement',null,factors.rawState,factors.rawMarket), condPct = cond-1;
+    const geoDollars = afterType*geoRes.total, condDollars = afterType*condPct;
+    const servicePrice = Math.max(tv.minimumJobPrice, afterType+geoDollars+condDollars);
+    return { status:'ok', unit:'unit', basePrice:base, geoAdjustment:geoDollars, conditionAdjustment:condDollars, geoPercent:geoRes.total, condPercent:condPct, servicePrice, laborHours:hours*typeF*(1+condPct), minimum:tv.minimumJobPrice, addons, meta:{ derived, typeF, largeF, cond, hours:r2(hours) } }; }
+  if(pm.type==='dayPorter'){ const dp = P.dayPorter, hours = Math.max(0,num(pm.hoursPerWeek==='custom'?pm.customHours:pm.hoursPerWeek)); if(hours>dp.customQuoteAboveWeeklyHours) return { status:'customQuote', reasons:['customStaffing'] };
+    const hrs = Math.max(dp.minimumWeeklyHours, hours), hr = dp.hourlyRate>0?dp.hourlyRate:pmDerivedRate(cfg), baseWeekly = hrs*hr;
+    const geoRes = geoAdjustmentPercent(cfg,'propertyManagement',null,factors.rawState,factors.rawMarket), weekly = baseWeekly+baseWeekly*geoRes.total, monthly = Math.max(dp.minimumMonthlyPrice, weekly*W);
+    return { status:'ok', unit:'month', basePrice:hrs*hr*W, geoAdjustment:baseWeekly*geoRes.total*W, conditionAdjustment:0, geoPercent:geoRes.total, servicePrice:monthly, laborHours:hrs*W, minimum:dp.minimumMonthlyPrice, addons, meta:{ hoursPerWeek:hrs, rate:r2(hr), derived:!(dp.hourlyRate>0), weeklyHours:hrs, monthlyHours:r2(hrs*W) } }; }
+  // add-on services only
+  if(!addons.lines.length) return { status:'customQuote', reasons: addons.quoteRequired.length?['addOnQuote']:['noServices'] };
+  return { status:'ok', unit:'job', basePrice:0, geoAdjustment:0, conditionAdjustment:0, servicePrice:0, laborHours:0, minimum:0, addons, meta:{} }; }
+function validateQuote(cfg, q){ const e=[]; if(!q.service||!cfg.services[q.service]?.active) e.push('service'); if(!q.state) e.push('state');
+  if(q.service!=='postConstruction'&&q.service!=='commercial'&&q.service!=='propertyManagement'){ if(q.tierIndex==null&&!(num(q.exactSqFt)>0)) e.push('sqft'); if(q.tierIndex==='over'&&!(num(q.exactSqFt)>5000)) e.push('exactSqFt'); }
+  if(q.service==='standard'&&!q.frequency) e.push('frequency'); if(q.service==='moveInOut'&&!q.moveType) e.push('moveType');
+  if(q.service==='postConstruction'){ if(!(num(q.exactSqFt)>0)) e.push('sqft'); if(!q.pc?.projectType) e.push('projectType'); if(!q.pc?.phase) e.push('phase'); if(!q.pc?.condition) e.push('condition'); }
+  if(q.service==='commercial'){ if(!(num(q.exactSqFt)>0)) e.push('sqft'); if(!q.commercial?.visitsPerWeek) e.push('frequency'); }
+  if(q.service==='propertyManagement'){ const pm=q.pm||{}; if(!pm.type) e.push('pmType');
+      if(pm.type==='community'||pm.type==='addOnServices'){ if(!pm.propertyType) e.push('pmPropertyType'); if(!(num(pm.units)>0)) e.push('pmUnits'); }
+      if(pm.type==='community'){ if(!pm.frequency) e.push('pmFrequency'); if(pm.frequency==='custom'&&!(num(pm.daysPerWeek)>=1&&num(pm.daysPerWeek)<=7)) e.push('pmDays'); if(!Object.values(pm.areas||{}).some(Boolean)) e.push('pmAreas'); if(!(num(pm.cleaners)>=1)) e.push('pmCleaners'); if(!(num(pm.hoursPerDay)>0)) e.push('pmHoursPerDay'); }
+      if(pm.type==='turnover'){ if(!pm.unitType) e.push('pmUnitType'); if(!(num(pm.bedrooms)>=0)||pm.bedrooms==='') e.push('pmBedrooms'); if(!(num(pm.bathrooms)>0)) e.push('pmBathrooms'); if(!pm.turnType) e.push('pmTurnType'); if(!pm.condition) e.push('pmCondition'); }
+      if(pm.type==='dayPorter'){ if(!pm.propertyType) e.push('pmPropertyType'); if(!pm.hoursPerWeek) e.push('pmHours'); if(pm.hoursPerWeek==='custom'&&!(num(pm.customHours)>0)) e.push('pmCustomHours'); }
+      for(const a of cfg.propertyManagementPricing.addOns){ const sel=pm.addOns?.[a.id]; if(sel?.on && ['perWindow','perSqFt','perRoom','hourly'].includes(a.pricingType) && !(num(sel.qty)>0)) e.push('pmAddonQty'); } }
+  if(['standard','deep','moveInOut','commercial'].includes(q.service)&&!q.condition) e.push('condition');
+  if(q.carpet?.enabled&&cfg.carpetPricing.mode==='sqft'&&!(num(q.carpet.sqft)>0)) e.push('carpetSqFt');
+  if(q.windows?.enabled&&cfg.windowPricing.mode==='perWindow'&&!(num(q.windows.count)>0)) e.push('windowCount');
+  return e; }
+
+/** Master calculation — follows the required 14-step order. */
+function calculateQuote(cfg, q){
+  const errors = validateQuote(cfg,q); if(errors.length) return { status:'invalid', errors };
+  const rawState = rawStateDiff(cfg,q.state), rawMarket = rawMarketDiff(cfg,q.market), factors={rawState,rawMarket};
+  const d = { service:q.service, rawStateFactor:r2(1+rawState), rawMarketFactor:r2(1+rawMarket), lines:[] };
+  let servicePrice=0, laborHours=0, unit='job', condFactor=1, tier=null;
+  let pmRes=null;
+  if(q.service==='propertyManagement'){
+    pmRes = calculatePropertyManagementPrice(cfg,q,factors); if(pmRes.status!=='ok') return { status:pmRes.status, reasons:pmRes.reasons, summary:q };
+    d.basePrice=pmRes.basePrice; d.geoAdjustment=pmRes.geoAdjustment; d.conditionAdjustment=pmRes.conditionAdjustment; d.geoPercent=pmRes.geoPercent??0; d.conditionPercent=pmRes.condPercent??0; d.pm=pmRes.meta; d.pmAddons=pmRes.addons; servicePrice=pmRes.servicePrice; laborHours=pmRes.laborHours; unit=pmRes.unit; condFactor=1+(pmRes.condPercent??0);
+  } else if(q.service==='postConstruction'){
+    const pc = calculatePostConstructionPrice(cfg,q,factors); if(pc.status!=='ok') return { status:'customQuote', reasons:pc.reasons, summary:q };
+    d.basePrice=pc.base; d.ratePerSqFt=pc.rate; d.phaseFactor=pc.phase; d.geoAdjustment=pc.geoAdj; d.conditionAdjustment=pc.condAdj; d.geoPercent=pc.geoPercent; d.conditionPercent=pc.condPercent; d.pcOptions=pc.options; servicePrice=pc.subtotal; laborHours=pc.laborHours; condFactor=pc.cond;
+  } else if(q.service==='commercial'){
+    const cp = cfg.commercialPricing, sqft = Math.max(0,num(q.exactSqFt)), vpw = num(q.commercial.visitsPerWeek,1); if(sqft>cp.customQuoteAboveSqFt) return { status:'customQuote', reasons:['sizeExceedsAutomatic'], summary:q };
+    const rate = cp.ratePerSqFtPerVisit[vpw]??cp.ratePerSqFtPerVisit[Object.keys(cp.ratePerSqFtPerVisit).sort((a,b)=>Math.abs(a-vpw)-Math.abs(b-vpw))[0]]; const base = Math.max(cp.minimumVisitPrice, sqft*rate); condFactor = calculateConditionFactor(cfg,q.condition); if(condFactor==='review') return { status:'review', reasons:['extremeCondition'], summary:q };
+    const geoResC = geoAdjustmentPercent(cfg,'commercial',null,rawState,rawMarket), condPctC = condFactor-1;
+    const geoDollarsC = base*geoResC.total, condDollarsC = base*condPctC;
+    d.basePrice=base; d.ratePerSqFt=rate; d.geoAdjustment=geoDollarsC; d.conditionAdjustment=condDollarsC; d.geoPercent=geoResC.total; d.conditionPercent=condPctC; servicePrice=base+geoDollarsC+condDollarsC; laborHours=Math.max(1.5,sqft/cfg.profitability.productionSqFtPerHour.commercial)*condFactor; unit='visit'; d.visitsPerMonth=r2(vpw*cp.weeksPerMonth);
+  } else {
+    tier = findSquareFootageTier(q.tierIndex==='over'?q.exactSqFt:T[q.tierIndex]); if(q.tierIndex!=='over'&&q.tierIndex!=null) tier = { ...tier, index:Number(q.tierIndex), label:TIER_LABELS[q.tierIndex], sqft:T[q.tierIndex] };
+    if(tier.over>0 && tier.sqft>cfg.over5000.customQuoteAboveSqFt && !q.allowLargeEstimate) return { status:'customQuote', reasons:['veryLarge'], summary:q, allowEstimate:true };
+    let base, key, freqKey; if(q.service==='standard'){ key=q.frequency; freqKey=q.frequency; base=calculateFrequencyPrice(cfg,tier.index,q.frequency); if(q.frequency!=='initial') unit='visit'; }
+    else if(q.service==='deep'){ key='deep'; freqKey='deep'; base=cfg.deepPricing[tier.index]; }
+    else { key='moveOut'; freqKey=q.moveType==='moveIn'?'moveIn':'moveOut'; base=cfg.moveOutPricing[tier.index]*(q.moveType==='moveIn'?cfg.moveInFactor:1); }
+    const extra = over5000Extra(cfg,tier.over,key), adjBase = base+extra; d.basePrice=base; d.over5000=extra; d.tier=tier.label;
+    const condPct = conditionAdjustmentPercent(cfg,q.condition,freqKey); if(condPct==='review') return { status:'review', reasons:['extremeCondition'], summary:q };
+    condFactor = 1+condPct;
+    const geoRes = geoAdjustmentPercent(cfg,q.service,freqKey,rawState,rawMarket);
+    const geoDollars = adjBase*geoRes.total, condDollars = adjBase*condPct;
+    d.geoAdjustment=geoDollars; d.conditionAdjustment=condDollars; d.geoPercent=geoRes.total; d.conditionPercent=condPct;
+    servicePrice = adjBase + geoDollars + condDollars;
+    laborHours = estimateLaborHours(cfg, q.service, tier.sqft||T[tier.index], condFactor, q.frequency);
+  }
+  d.conditionFactor = condFactor; d.servicePrice = servicePrice;
+  // STEP 8 windows (never both models)
+  const win = q.service==='postConstruction' ? { amount:0, method:'pcOption' } : calculateWindowPrice(cfg, servicePrice, q.windows); if(win.method==='review') return { status:'review', reasons:[win.review], summary:q }; d.windows=win;
+  // STEP 9 carpet by carpet sq ft only
+  const carpet = calculateCarpetPrice(cfg, q.carpet); d.carpet=carpet;
+  // STEP 10 add-ons — a small specialty geo nudge, never the full residential swing
+  const addons = q.service==='propertyManagement' ? { total:pmRes.addons.total, lines:pmRes.addons.lines } : calculateAddons(cfg, q.service, q.addOns, rawState, rawMarket); d.addons=addons; if(pmRes) d.addonsQuoteRequired = pmRes.addons.quoteRequired;
+  // STEP 11 profitability floor — a floor, not a markup: only ever raises an already-calculated price up to what the job must earn to be viable, never adds on top of a price that already clears it.
+  const p = cfg.profitability, laborCost = laborHours*p.laborCostPerHour, overheadCost = laborCost*p.overheadPercent;
+  const floor = Math.max(calculateProfitabilityFloor(cfg, q.service, laborHours), pmRes?pmRes.minimum:0); d.profitabilityFloor=r2(floor); d.laborHours=r2(laborHours); d.laborCost=r2(laborCost); d.overheadCost=r2(overheadCost);
+  const nonCarpet = servicePrice + win.amount + addons.total; const preFloorPrice = nonCarpet + carpet.recommended; d.preFloorPrice=r2(preFloorPrice); let recRaw = preFloorPrice; d.floorApplied = recRaw<floor; recRaw = Math.max(recRaw, floor);
+  // STEP 12–14 rounding and tiers — Low can never fall below the SAME per-job profitability floor used for Recommended
+  const pt = cfg.pricingTiers, recommended = roundCustomerPrice(cfg, recRaw);
+  const lowRaw = Math.max(recommended*pt.low - carpet.recommended + carpet.low, floor), premRaw = recommended*pt.premium - carpet.recommended + carpet.premium;
+  const low = roundCustomerPrice(cfg, lowRaw), premium = roundCustomerPrice(cfg, premRaw);
+  const sqftForRate = q.service==='propertyManagement' ? num(q.pm.sqft||q.pm.commonAreaSqFt) : q.service==='postConstruction'||q.service==='commercial' ? num(q.exactSqFt) : (tier.sqft||T[tier.index]);
+  d.recommended=recommended; d.low=low; d.premium=premium; d.effectivePerSqFt = sqftForRate>0 ? r2(recommended/sqftForRate) : 0;
+  d.revenuePerHour = laborHours>0 ? r2(recommended/laborHours) : null;
+  // Price sanity checks — admin/debug only, never shown to the customer, never block the quote
+  d.flags = [];
+  if(Math.abs(d.geoPercent||0) > cfg.geography.maxCombinedGeographicAdjustment - 0.001) d.flags.push('Geographic adjustment is at the configured cap.');
+  if(Math.abs(d.conditionPercent||0) > 0.35) d.flags.push('Condition adjustment is unusually large.');
+  if(d.basePrice>0 && addons.total > d.basePrice*0.5) d.flags.push('Add-ons are a large share of the base price — confirm scope.');
+  if(preFloorPrice>0 && floor > preFloorPrice*1.3) d.flags.push('Profitability floor is well above the market-derived price — review labor-cost assumptions.');
+  if(d.revenuePerHour!=null){ if(d.revenuePerHour<25) d.flags.push('Revenue per labor hour is low.'); if(d.revenuePerHour>150) d.flags.push('Revenue per labor hour is unusually high — confirm labor-hour estimate.'); }
+  if(sqftForRate>0){ const band = {standard:[0.06,0.40],deep:[0.10,0.55],moveInOut:[0.10,0.65]}[q.service]; if(band && (d.effectivePerSqFt<band[0]||d.effectivePerSqFt>band[1])) d.flags.push(`Effective $/sq ft ($${d.effectivePerSqFt}) is outside the typical band for this service.`); }
+  const monthly = unit==='visit' ? (q.service==='commercial' ? d.visitsPerMonth : ({weekly:4.33,biWeekly:2.17,monthly:1})[q.frequency]||1) : null;
+  if(pmRes){ const W = cfg.propertyManagementPricing.weeksPerMonth, m = pmRes.meta, extra = {}; for(const [k,v] of Object.entries({low,recommended,premium})){ extra[k] = q.pm.type==='community' ? { perVisit:roundCustomerPrice(cfg,v/Math.max(1,m.visitsPerMonth)), weekly:roundCustomerPrice(cfg,v/W) } : q.pm.type==='dayPorter' ? { weekly:roundCustomerPrice(cfg,v/W), hourly:r2(v/W/Math.max(1,m.hoursPerWeek)) } : {}; }
+    return { status:'ok', low, recommended, premium, unit, extra, monthly:null, quoteRequired:pmRes.addons.quoteRequired, debug:d, summary:q }; }
+  return { status:'ok', low, recommended, premium, unit, monthly: monthly ? { low:roundCustomerPrice(cfg,low*monthly), recommended:roundCustomerPrice(cfg,recommended*monthly), premium:roundCustomerPrice(cfg,premium*monthly) } : null, debug:d, summary:q };
+}
+const calculateRecommendedPrice = (cfg,q) => calculateQuote(cfg,q).recommended;
+const calculateLowPrice = (cfg,q) => calculateQuote(cfg,q).low;
+const calculatePremiumPrice = (cfg,q) => calculateQuote(cfg,q).premium;
+/** Which questions apply to a service — drives the progressive form. */
+function getApplicableQuestions(service){ return { standard:['sqft','frequency','condition','addons'], deep:['sqft','condition','addons'], moveInOut:['sqft','moveType','condition','addons'], postConstruction:['sqftExact','projectType','phase','pcCondition','pcOptions'], commercial:['sqftExact','commercialFrequency','condition','addons'], propertyManagement:['pmType','pmPropertyType','pmUnits','pmFrequency','pmAreas','pmTasks','pmStaffing','pmUnitType','pmUnitSize','pmTurnType','pmCondition','pmHours','pmPorterServices','pmAddons'] }[service]||[]; }
+
+/* ---------------------------------------------------------------- 3. TEXT (EN / ES) */
+const I18N = {
+  en: { sub:'Cleaning estimate', progress:'Step {n} of {t}', back:'Back', next:'Continue', getPrice:'Get my price', startOver:'Start over', restart:'New quote',
+    q1:'What type of cleaning do you need?', services:{ standard:['Standard Cleaning','Recurring or first-time home cleaning'], deep:['Deep Cleaning','Detailed top-to-bottom cleaning'], moveInOut:['Move-In / Move-Out','Empty-home cleaning for a move'], postConstruction:['Post-Construction Cleaning','After a build or remodel'], commercial:['Commercial Cleaning','Offices and business spaces'], propertyManagement:['Property Management Cleaning','Apartment communities, multifamily properties, managed homes, vacant units, and common areas'] },
+    qSize:'How large is your home?', qSizeC:'How large is the space?', sqft:'sq ft', exact:'Enter the exact square footage', qFreq:'How often?', freq:{ initial:['Initial / First Cleaning','One-time first visit'], weekly:['Weekly',''], biWeekly:['Bi-Weekly','Every two weeks'], monthly:['Monthly',''] },
+    qMove:'Is this a move-in or a move-out?', move:{ moveIn:['Move-In','Before you move in'], moveOut:['Move-Out','After you move out'] },
+    qCond:'How is the home currently?', qCondC:'How is the space currently?', cond:{ normal:['Normal','Regularly maintained'], moderate:['Moderately Dirty','Needs some extra attention'], heavy:['Heavy','Not cleaned in a while'], veryHeavy:['Very Heavy','Significant buildup'], extreme:['Extreme','We’ll review it in person'] },
+    qAdd:'Would you like to add anything?', qAddH:'Optional. Tap what you need.', windows:'Window cleaning', carpet:'Carpet cleaning', winScope:'Which windows?', winInterior:'Interior only', winBoth:'Interior + exterior', winAccess:'Window access', access:{ standard:'Standard', secondFloor:'Second floor', highAccess:'High access' }, winCount:'How many windows?', carpetSqFt:'How many sq ft of carpet need cleaning?', carpetCond:'Carpet condition', ccond:{ normal:'Normal', heavySoil:'Heavy soil', petOdor:'Pet odor / treatment' }, rooms:{ room:'Rooms', hallway:'Hallways', landing:'Landings', stairs:'Stairs (steps)' }, qty:'Quantity',
+    qState:'Where is the property?', state:'State', city:'City (optional)',
+    qType:'What kind of project is it?', ptype:{ residential:['Residential','House, condo or apartment'], commercial:['Commercial','Office, retail, restaurant, gym'] }, qPhase:'Which cleaning phase?', phase:{ final:['Final Cleaning','One detailed final clean'], finalTouchUp:['Final Touch-Up','After a final clean was done'], multiPhase:['Multi-Phase','Rough + final + touch-up'] }, qPcCond:'What condition is the site in?', pcond:{ lightDust:['Light Construction Dust',''], normalDust:['Normal Construction Dust',''], heavyDust:['Heavy Construction Dust',''], heavyResidue:['Heavy Residue / Debris',''] }, qPcOpt:'Optional services', pcopt:{ windows:'Windows', cabinets:'Cabinets', garage:'Garage', patio:'Patio', floorCare:'Floor care', adhesiveRemoval:'Adhesive / sticker removal', paintResidue:'Paint residue', additionalTouchUp:'Additional touch-up' },
+    qCFreq:'How many visits per week?', perWeek:'per week', resultTitle:'Your estimated cleaning price', tiers:{ low:['Low',''], recommended:['Recommended',''], premium:['Premium',''] }, perVisit:'per visit', perMonth:'{a} per month', perJob:'', resultNote:'Estimate based on the information provided. Final price confirmed before service.', pctLow:'20% less', pctPrem:'15% more',
+    sum:{ type:'Cleaning type', size:'Property size', freq:'Frequency', services:'Selected services', location:'Location', phase:'Phase', condition:'Condition', none:'None' },
+    customTitle:'Custom quote required', customBody:'This project needs a quick review so we can price it accurately. Leave your details and we’ll send a custom quote.', reasons:{ sizeExceedsAutomatic:'The size of this project is above our automatic estimate range.', heavyResidueMultiPhase:'Heavy residue across multiple phases needs a walkthrough.', floorCareLargeProject:'Specialty floor care on a project this size needs a walkthrough.', veryLarge:'Properties this large need a review for an accurate price.', extremeCondition:'Extreme conditions are reviewed in person.', highAccessWindows:'High-access windows are reviewed in person.' }, orEstimate:'Show an automatic estimate anyway',
+    errs:{ sqft:'Please choose a size.', exactSqFt:'Enter the square footage (over 5,000).', frequency:'Please choose a frequency.', moveType:'Choose move-in or move-out.', condition:'Please choose a condition.', projectType:'Choose a project type.', phase:'Choose a phase.', carpetSqFt:'Enter the carpet square footage.', windowCount:'Enter the number of windows.', state:'Choose a state.', service:'Choose a service.' },
+    pm:{ name:'Property Management Cleaning', desc:'Cleaning services for apartment communities, multifamily properties, managed homes, vacant units, and common areas.', qType:'What type of service does the property need?',
+      types:{ community:['Community / Common Area Cleaning','Recurring cleaning of lobbies, amenities, hallways and offices'], turnover:['Vacant Unit / Turnover Cleaning','Apartments, condos, townhomes and managed homes'], dayPorter:['Day Porter / On-Site Porter','A porter assigned to the property for set hours'], addOnServices:['Property Management Add-On Services','Windows, carpet, pool, pressure washing and more'] },
+      qProperty:'Tell us about the property.', qPropertyType:'What type of property is this?', propertyTypes:{ apartmentCommunity:'Apartment Community', multifamily:'Multifamily Property', managedCommunity:'Managed Residential Community', townhomeCommunity:'Townhome Community', condoCommunity:'Condo Community', other:'Other' },
+      qUnits:'How many units does the property have?', units:'Units', commonSqFt:'Common-area square footage (optional)', qFrequency:'How often do you need cleaning?', perWeek:'per week', custom:'Custom frequency', daysPerWeek:'Days per week',
+      qAreas:'Which areas need service?', areas:{ mainLobby:'Main Lobby', leasingOffice:'Leasing Office', managementOffice:'Management Office', maintenanceOffice:'Maintenance Office', maintenanceRoom:'Maintenance Room', clubhouse:'Clubhouse', communityRoom:'Community Room', coworking:'Coworking Space', conferenceRoom:'Conference Room', mailroom:'Mailroom', packageRoom:'Package Room', fitnessCenter:'Fitness Center / Gym', communityRestrooms:'Community Restrooms', residentHallways:'Resident Hallways', stairwells:'Stairwells', elevators:'Elevators', elevatorLandings:'Elevator Landings', trashRooms:'Trash Rooms', trashChuteRooms:'Trash Chute Rooms', storageRooms:'Storage Rooms', bikeRooms:'Bike Rooms', modelApartment:'Model Apartment', modelHome:'Model Home', poolArea:'Pool Area', poolDeck:'Pool Deck', amenityDeck:'Amenity Deck', courtyards:'Courtyards', outdoorCommon:'Outdoor Common Areas', petAreas:'Pet Areas', petWash:'Pet Wash Area', garageAreas:'Garage Areas', otherCommon:'Other Common Areas' },
+      qTasks:'Which cleaning tasks should be included?', tasksHint:'Tap a task, then choose how often.', dailyTasks:'Common tasks', periodicTasks:'Periodic tasks', taskFreq:{ daily:'Daily', weekly:'Weekly', biWeekly:'Bi-Weekly', monthly:'Monthly', asNeeded:'As needed' },
+      tasks:{ sweep:'Sweep hard floors', mop:'Mop hard floors', vacuum:'Vacuum carpet', emptyTrash:'Empty trash receptacles', liners:'Replace trash liners', cleanReceptacles:'Clean trash receptacles', entryDoors:'Clean entry doors', exitDoors:'Clean exit doors', doorGlass:'Clean door glass', spotGlass:'Spot clean glass', dustFurniture:'Dust furniture', dustTables:'Dust tables', countertops:'Clean countertops', highTouch:'Clean high-touch surfaces', doors:'Clean doors', handles:'Clean door handles', switches:'Clean light switches', elevatorInteriors:'Clean elevator interiors', elevatorFloors:'Clean elevator floors', elevatorWalls:'Clean elevator walls', stainless:'Polish stainless steel', landings:'Clean elevator landings', mailCounters:'Clean mailroom counters', mailboxes:'Clean mailbox areas', hallways:'Clean resident hallways', spotVacuum:'Spot vacuum hallways', chuteRooms:'Clean trash chute rooms', floorTrash:'Remove trash from floors', leasing:'Clean leasing office', lobby:'Clean lobby', clubhouse:'Clean clubhouse', fitness:'Clean fitness center', restrooms:'Clean community restrooms',
+        fullHallwayVacuum:'Full hallway vacuuming', stairwellCleaning:'Stairwell cleaning', highDusting:'High dusting', ceilingVents:'Ceiling vent dusting', airReturns:'Air return cleaning', baseboards:'Baseboard cleaning', deepFloor:'Deep floor cleaning', cornersEdges:'Detailed corners and edges', deepTrashRoom:'Deep trash room cleaning', deepTrashChute:'Deep trash chute cleaning', storageRoom:'Storage room cleaning', bikeRoom:'Bike room cleaning', garageArea:'Garage area cleaning', interiorWindows:'Interior window cleaning', exteriorWindows:'Exterior window cleaning', modelApartment:'Model apartment cleaning', modelHome:'Model home cleaning', grill:'Community grill cleaning', spa:'Spa cleaning', poolDetail:'Pool-area detail cleaning' },
+      qStaffing:'How many cleaners are required?', cleaners:'Number of cleaners', hoursPerDay:'Hours per cleaner per day', suggested:'Suggested from the selected areas: about {h} hours per visit', backup:'Backup coverage required', dedicated:'Dedicated cleaners required', supervision:'Supervisor / quality-control visits', weeklyHours:'Estimated weekly labor hours: {h}',
+      qUnitType:'What type of property is this?', unitTypes:{ apartment:'Apartment', condo:'Condo', townhome:'Townhome', managedHome:'Managed Home' }, qUnitSize:'Tell us about the unit.', bedrooms:'How many bedrooms?', bathrooms:'How many bathrooms?', sqft:'What is the approximate square footage?', sqftOptional:'Optional',
+      qTurnType:'What type of turnover cleaning is needed?', turnTypes:{ light:['Light Turnover','Touch-up for a lightly used unit'], standard:['Standard Turnover','Ready to show or ready for the next resident'], deep:['Deep Turnover','Detailed top-to-bottom cleaning'], moveOut:['Move-Out Cleaning','After the resident leaves'], moveInReady:['Move-In Ready Cleaning','Final detail before move-in'], heavy:['Heavy / Restoration-Level Turnover','Significant buildup or damage'] },
+      qCondition:'What condition is the property in?', conditions:{ normal:['Normal','Regularly maintained'], light:['Light','Minor dust and touch-ups'], moderate:['Moderate','Needs extra attention'], heavy:['Heavy','Significant buildup'], veryHeavy:['Very Heavy','Neglected unit'], extreme:['Extreme / Requires Review','We review it on site before pricing'] },
+      qHours:'How many porter hours per week does the property need?', hoursPerWeek:'Hours per week', customHours:'Custom hours per week', qPorterServices:'Which porter services are needed?', porterServices:{ lobbyUpkeep:'Lobby upkeep', commonUpkeep:'Common-area upkeep', restroomChecks:'Restroom checks', trashPickup:'Trash pickup', spotCleaning:'Spot cleaning', amenityCleaning:'Amenity-area cleaning', poolUpkeep:'Pool-area upkeep', petCleanup:'Pet-area cleanup', highTouch:'High-touch cleaning', continuous:'Continuous visible cleaning', spills:'Spill cleanup', lightMaintenance:'Light common-area maintenance support' },
+      qAddons:'Would you like to include additional services?', addonQty:{ perItem:'Quantity', perWindow:'Number of windows', perSqFt:'Square feet', perRoom:'Number of rooms', perVisit:'Visits per month', hourly:'Hours' }, highAccess:'Includes high-access exterior windows', quoteRequired:'Additional quote required',
+      res:{ title:'PROPERTY MANAGEMENT CLEANING', propertyType:'Property Type', units:'Units', service:'Service', frequency:'Frequency', areas:'Areas', tasks:'Cleaning Tasks', staffing:'Staffing', weeklyHours:'Estimated Weekly Hours', monthlyHours:'Estimated Monthly Hours', addons:'Additional Services', condition:'Condition', bedrooms:'Bedrooms', bathrooms:'Bathrooms', sqft:'Square Footage', turnType:'Turnover Type', hoursPerWeek:'Hours Per Week', recommendedMonthly:'Recommended Monthly Price', pricePerUnit:'Price Per Unit', perVisit:'{a} per visit', perWeek:'{a} per week', perHour:'{a} per hour', perMonth:'per month', perUnit:'per unit', cleaners:'{n} cleaner(s)', quoteNote:'Items marked "additional quote required" are not included in the price and will be quoted separately.', visits:'{n} visits per week' },
+      reasons:{ largeProperty:'Communities this large are priced after a site visit.', largeCommonArea:'The common-area footprint is above our automatic estimate range.', customStaffing:'This staffing level needs a custom staffing plan.', extremeCondition:'The property condition requires review before final pricing.', largeUnit:'Units this large are reviewed before pricing.', restorationLevel:'Restoration-level turnover in very heavy condition needs an on-site review.', largeSpecialtyProject:'Large specialty projects are quoted after a site visit.', addOnQuote:'The selected services need a custom quote.', noServices:'Select at least one service to receive a price.' },
+      errs:{ pmType:'Choose a service type.', pmPropertyType:'Choose a property type.', pmUnits:'Enter the number of units.', pmFrequency:'Choose a frequency.', pmDays:'Enter days per week (1–7).', pmAreas:'Select at least one area.', pmCleaners:'Enter the number of cleaners.', pmHoursPerDay:'Enter hours per cleaner per day.', pmUnitType:'Choose a property type.', pmBedrooms:'Enter the number of bedrooms.', pmBathrooms:'Enter the number of bathrooms.', pmTurnType:'Choose a turnover type.', pmCondition:'Choose a condition.', pmHours:'Choose hours per week.', pmCustomHours:'Enter custom hours per week.', pmAddonQty:'Enter a quantity for each selected service.' },
+      admin:{ tab:'Property Management', placeholder:'0 = placeholder: derived from your profitability settings until you set a rate. Rates below your minimum hourly revenue are raised by the profitability floor.', community:'Community / common area', turnover:'Vacant unit / turnover', porter:'Day porter', addons:'Property management add-ons', thresholds:'Custom quote thresholds' } },
+    admin:{ title:'Admin — calculation detail', hide:'Hidden from customers. Open with #admin.', settings:'Pricing settings', save:'Save settings', reset:'Reset to defaults', saved:'Settings saved.', close:'Close admin' } },
+  es: { sub:'Estimado de limpieza', progress:'Paso {n} de {t}', back:'Atrás', next:'Continuar', getPrice:'Ver mi precio', startOver:'Empezar de nuevo', restart:'Nueva cotización',
+    q1:'¿Qué tipo de limpieza necesitas?', services:{ standard:['Limpieza Estándar','Limpieza recurrente o primera limpieza'], deep:['Limpieza Profunda','Limpieza detallada de arriba a abajo'], moveInOut:['Mudanza (entrada / salida)','Limpieza de casa vacía para mudanza'], postConstruction:['Limpieza Post-Construcción','Después de obra o remodelación'], commercial:['Limpieza Comercial','Oficinas y espacios de negocio'], propertyManagement:['Limpieza para Administración de Propiedades','Comunidades de apartamentos, propiedades multifamiliares, casas administradas, unidades vacantes y áreas comunes'] },
+    qSize:'¿Qué tan grande es tu casa?', qSizeC:'¿Qué tan grande es el espacio?', sqft:'pies²', exact:'Ingresa los pies cuadrados exactos', qFreq:'¿Con qué frecuencia?', freq:{ initial:['Limpieza Inicial','Primera visita, una sola vez'], weekly:['Semanal',''], biWeekly:['Quincenal','Cada dos semanas'], monthly:['Mensual',''] },
+    qMove:'¿Es entrada o salida de mudanza?', move:{ moveIn:['Entrada','Antes de mudarte'], moveOut:['Salida','Después de mudarte'] },
+    qCond:'¿Cómo está la casa actualmente?', qCondC:'¿Cómo está el espacio actualmente?', cond:{ normal:['Normal','Con mantenimiento regular'], moderate:['Moderadamente sucia','Necesita atención extra'], heavy:['Sucia','Sin limpiar hace tiempo'], veryHeavy:['Muy sucia','Acumulación importante'], extreme:['Extrema','La revisamos en persona'] },
+    qAdd:'¿Deseas agregar algo?', qAddH:'Opcional. Toca lo que necesites.', windows:'Limpieza de ventanas', carpet:'Limpieza de alfombra', winScope:'¿Qué ventanas?', winInterior:'Solo interior', winBoth:'Interior + exterior', winAccess:'Acceso a las ventanas', access:{ standard:'Estándar', secondFloor:'Segundo piso', highAccess:'Alto acceso' }, winCount:'¿Cuántas ventanas?', carpetSqFt:'¿Cuántos pies² de alfombra necesitan limpieza?', carpetCond:'Condición de la alfombra', ccond:{ normal:'Normal', heavySoil:'Muy sucia', petOdor:'Olor de mascota / tratamiento' }, rooms:{ room:'Habitaciones', hallway:'Pasillos', landing:'Descansos', stairs:'Escalones' }, qty:'Cantidad',
+    qState:'¿Dónde está la propiedad?', state:'Estado', city:'Ciudad (opcional)',
+    qType:'¿Qué tipo de proyecto es?', ptype:{ residential:['Residencial','Casa, condominio o apartamento'], commercial:['Comercial','Oficina, tienda, restaurante, gimnasio'] }, qPhase:'¿Qué fase de limpieza?', phase:{ final:['Limpieza Final','Una limpieza final detallada'], finalTouchUp:['Retoque Final','Después de una limpieza final'], multiPhase:['Varias Fases','Gruesa + final + retoque'] }, qPcCond:'¿En qué condición está el sitio?', pcond:{ lightDust:['Polvo ligero de obra',''], normalDust:['Polvo normal de obra',''], heavyDust:['Polvo pesado de obra',''], heavyResidue:['Residuos / escombro pesado',''] }, qPcOpt:'Servicios opcionales', pcopt:{ windows:'Ventanas', cabinets:'Gabinetes', garage:'Garaje', patio:'Patio', floorCare:'Cuidado de pisos', adhesiveRemoval:'Retiro de adhesivos / etiquetas', paintResidue:'Residuos de pintura', additionalTouchUp:'Retoque adicional' },
+    qCFreq:'¿Cuántas visitas por semana?', perWeek:'por semana', resultTitle:'Tu precio estimado de limpieza', tiers:{ low:['Básico',''], recommended:['Recomendado',''], premium:['Premium',''] }, perVisit:'por visita', perMonth:'{a} al mes', perJob:'', resultNote:'Estimado según la información proporcionada. El precio final se confirma antes del servicio.', pctLow:'20% menos', pctPrem:'15% más',
+    sum:{ type:'Tipo de limpieza', size:'Tamaño', freq:'Frecuencia', services:'Servicios seleccionados', location:'Ubicación', phase:'Fase', condition:'Condición', none:'Ninguno' },
+    customTitle:'Cotización personalizada requerida', customBody:'Este proyecto necesita una revisión rápida para cotizarlo con precisión. Déjanos tus datos y te enviamos una cotización.', reasons:{ sizeExceedsAutomatic:'El tamaño del proyecto supera el rango de estimado automático.', heavyResidueMultiPhase:'Residuos pesados en varias fases requieren una visita.', floorCareLargeProject:'El cuidado de pisos en un proyecto de este tamaño requiere una visita.', veryLarge:'Propiedades de este tamaño requieren revisión para un precio exacto.', extremeCondition:'Las condiciones extremas se revisan en persona.', highAccessWindows:'Las ventanas de alto acceso se revisan en persona.' }, orEstimate:'Mostrar un estimado automático de todos modos',
+    errs:{ sqft:'Elige un tamaño.', exactSqFt:'Ingresa los pies cuadrados (más de 5,000).', frequency:'Elige una frecuencia.', moveType:'Elige entrada o salida.', condition:'Elige una condición.', projectType:'Elige el tipo de proyecto.', phase:'Elige una fase.', carpetSqFt:'Ingresa los pies² de alfombra.', windowCount:'Ingresa el número de ventanas.', state:'Elige un estado.', service:'Elige un servicio.' },
+    pm:{ name:'Limpieza para Administración de Propiedades', desc:'Servicios de limpieza para comunidades de apartamentos, propiedades multifamiliares, casas administradas, unidades vacantes y áreas comunes.', qType:'¿Qué tipo de servicio necesita la propiedad?',
+      types:{ community:['Áreas Comunes / Comunidad','Limpieza recurrente de lobbies, amenidades, pasillos y oficinas'], turnover:['Unidad Vacante / Turnover','Apartamentos, condominios, townhomes y casas administradas'], dayPorter:['Day Porter / Porter en Sitio','Un porter asignado a la propiedad por horas fijas'], addOnServices:['Servicios Adicionales','Ventanas, alfombra, piscina, lavado a presión y más'] },
+      qProperty:'Cuéntanos sobre la propiedad.', qPropertyType:'¿Qué tipo de propiedad es?', propertyTypes:{ apartmentCommunity:'Comunidad de Apartamentos', multifamily:'Propiedad Multifamiliar', managedCommunity:'Comunidad Residencial Administrada', townhomeCommunity:'Comunidad de Townhomes', condoCommunity:'Comunidad de Condominios', other:'Otra' },
+      qUnits:'¿Cuántas unidades tiene la propiedad?', units:'Unidades', commonSqFt:'Pies cuadrados de áreas comunes (opcional)', qFrequency:'¿Con qué frecuencia necesitas limpieza?', perWeek:'por semana', custom:'Frecuencia personalizada', daysPerWeek:'Días por semana',
+      qAreas:'¿Qué áreas necesitan servicio?', areas:{ mainLobby:'Lobby Principal', leasingOffice:'Oficina de Leasing', managementOffice:'Oficina Administrativa', maintenanceOffice:'Oficina de Mantenimiento', maintenanceRoom:'Cuarto de Mantenimiento', clubhouse:'Clubhouse', communityRoom:'Salón Comunitario', coworking:'Espacio de Coworking', conferenceRoom:'Sala de Conferencias', mailroom:'Cuarto de Correo', packageRoom:'Cuarto de Paquetes', fitnessCenter:'Gimnasio', communityRestrooms:'Baños Comunes', residentHallways:'Pasillos Residenciales', stairwells:'Escaleras', elevators:'Elevadores', elevatorLandings:'Vestíbulos de Elevador', trashRooms:'Cuartos de Basura', trashChuteRooms:'Cuartos de Ducto de Basura', storageRooms:'Cuartos de Almacenamiento', bikeRooms:'Cuarto de Bicicletas', modelApartment:'Apartamento Modelo', modelHome:'Casa Modelo', poolArea:'Área de Piscina', poolDeck:'Deck de Piscina', amenityDeck:'Deck de Amenidades', courtyards:'Patios Interiores', outdoorCommon:'Áreas Comunes Exteriores', petAreas:'Áreas de Mascotas', petWash:'Lavado de Mascotas', garageAreas:'Áreas de Estacionamiento', otherCommon:'Otras Áreas Comunes' },
+      qTasks:'¿Qué tareas de limpieza deben incluirse?', tasksHint:'Toca una tarea y elige la frecuencia.', dailyTasks:'Tareas comunes', periodicTasks:'Tareas periódicas', taskFreq:{ daily:'Diario', weekly:'Semanal', biWeekly:'Quincenal', monthly:'Mensual', asNeeded:'Según necesidad' },
+      tasks:{ sweep:'Barrer pisos duros', mop:'Trapear pisos duros', vacuum:'Aspirar alfombra', emptyTrash:'Vaciar basureros', liners:'Reemplazar bolsas', cleanReceptacles:'Limpiar basureros', entryDoors:'Limpiar puertas de entrada', exitDoors:'Limpiar puertas de salida', doorGlass:'Limpiar vidrios de puertas', spotGlass:'Limpieza puntual de vidrios', dustFurniture:'Desempolvar muebles', dustTables:'Desempolvar mesas', countertops:'Limpiar mostradores', highTouch:'Limpiar superficies de alto contacto', doors:'Limpiar puertas', handles:'Limpiar manijas', switches:'Limpiar interruptores', elevatorInteriors:'Limpiar interior de elevadores', elevatorFloors:'Limpiar pisos de elevadores', elevatorWalls:'Limpiar paredes de elevadores', stainless:'Pulir acero inoxidable', landings:'Limpiar vestíbulos de elevador', mailCounters:'Limpiar mostradores de correo', mailboxes:'Limpiar área de buzones', hallways:'Limpiar pasillos residenciales', spotVacuum:'Aspirado puntual de pasillos', chuteRooms:'Limpiar cuartos de ducto', floorTrash:'Retirar basura del piso', leasing:'Limpiar oficina de leasing', lobby:'Limpiar lobby', clubhouse:'Limpiar clubhouse', fitness:'Limpiar gimnasio', restrooms:'Limpiar baños comunes',
+        fullHallwayVacuum:'Aspirado completo de pasillos', stairwellCleaning:'Limpieza de escaleras', highDusting:'Desempolvado en altura', ceilingVents:'Desempolvar rejillas de techo', airReturns:'Limpiar retornos de aire', baseboards:'Limpieza de zócalos', deepFloor:'Limpieza profunda de pisos', cornersEdges:'Detalle de esquinas y bordes', deepTrashRoom:'Limpieza profunda de cuarto de basura', deepTrashChute:'Limpieza profunda de ducto', storageRoom:'Limpieza de almacenamiento', bikeRoom:'Limpieza de cuarto de bicicletas', garageArea:'Limpieza de estacionamiento', interiorWindows:'Limpieza de ventanas interiores', exteriorWindows:'Limpieza de ventanas exteriores', modelApartment:'Limpieza de apartamento modelo', modelHome:'Limpieza de casa modelo', grill:'Limpieza de parrillas comunitarias', spa:'Limpieza de spa', poolDetail:'Detalle de área de piscina' },
+      qStaffing:'¿Cuántos limpiadores se requieren?', cleaners:'Número de limpiadores', hoursPerDay:'Horas por limpiador por día', suggested:'Sugerido según las áreas seleccionadas: unas {h} horas por visita', backup:'Se requiere cobertura de respaldo', dedicated:'Se requiere personal dedicado', supervision:'Visitas de supervisor / control de calidad', weeklyHours:'Horas de trabajo semanales estimadas: {h}',
+      qUnitType:'¿Qué tipo de propiedad es?', unitTypes:{ apartment:'Apartamento', condo:'Condominio', townhome:'Townhome', managedHome:'Casa Administrada' }, qUnitSize:'Cuéntanos sobre la unidad.', bedrooms:'¿Cuántas habitaciones?', bathrooms:'¿Cuántos baños?', sqft:'¿Cuál es el tamaño aproximado en pies²?', sqftOptional:'Opcional',
+      qTurnType:'¿Qué tipo de limpieza de turnover se necesita?', turnTypes:{ light:['Turnover Ligero','Retoque para una unidad poco usada'], standard:['Turnover Estándar','Lista para mostrar o para el próximo residente'], deep:['Turnover Profundo','Limpieza detallada de arriba a abajo'], moveOut:['Limpieza de Salida','Después de que el residente se va'], moveInReady:['Lista para Entrada','Detalle final antes de la mudanza'], heavy:['Turnover Pesado / Restauración','Acumulación o daño significativo'] },
+      qCondition:'¿En qué condición está la propiedad?', conditions:{ normal:['Normal','Con mantenimiento regular'], light:['Ligera','Polvo menor y retoques'], moderate:['Moderada','Necesita atención extra'], heavy:['Pesada','Acumulación significativa'], veryHeavy:['Muy Pesada','Unidad descuidada'], extreme:['Extrema / Requiere Revisión','La revisamos en sitio antes de cotizar'] },
+      qHours:'¿Cuántas horas de porter por semana necesita la propiedad?', hoursPerWeek:'Horas por semana', customHours:'Horas personalizadas por semana', qPorterServices:'¿Qué servicios de porter se necesitan?', porterServices:{ lobbyUpkeep:'Mantenimiento de lobby', commonUpkeep:'Mantenimiento de áreas comunes', restroomChecks:'Revisión de baños', trashPickup:'Recolección de basura', spotCleaning:'Limpieza puntual', amenityCleaning:'Limpieza de amenidades', poolUpkeep:'Mantenimiento de piscina', petCleanup:'Limpieza de áreas de mascotas', highTouch:'Limpieza de alto contacto', continuous:'Limpieza visible continua', spills:'Limpieza de derrames', lightMaintenance:'Apoyo ligero de mantenimiento' },
+      qAddons:'¿Deseas incluir servicios adicionales?', addonQty:{ perItem:'Cantidad', perWindow:'Número de ventanas', perSqFt:'Pies cuadrados', perRoom:'Número de cuartos', perVisit:'Visitas por mes', hourly:'Horas' }, highAccess:'Incluye ventanas exteriores de alto acceso', quoteRequired:'Requiere cotización adicional',
+      res:{ title:'LIMPIEZA PARA ADMINISTRACIÓN DE PROPIEDADES', propertyType:'Tipo de Propiedad', units:'Unidades', service:'Servicio', frequency:'Frecuencia', areas:'Áreas', tasks:'Tareas de Limpieza', staffing:'Personal', weeklyHours:'Horas Semanales Estimadas', monthlyHours:'Horas Mensuales Estimadas', addons:'Servicios Adicionales', condition:'Condición', bedrooms:'Habitaciones', bathrooms:'Baños', sqft:'Pies Cuadrados', turnType:'Tipo de Turnover', hoursPerWeek:'Horas por Semana', recommendedMonthly:'Precio Mensual Recomendado', pricePerUnit:'Precio por Unidad', perVisit:'{a} por visita', perWeek:'{a} por semana', perHour:'{a} por hora', perMonth:'al mes', perUnit:'por unidad', cleaners:'{n} limpiador(es)', quoteNote:'Los servicios marcados "requiere cotización adicional" no están incluidos en el precio y se cotizan por separado.', visits:'{n} visitas por semana' },
+      reasons:{ largeProperty:'Comunidades de este tamaño se cotizan después de una visita.', largeCommonArea:'Las áreas comunes superan el rango de estimado automático.', customStaffing:'Este nivel de personal requiere un plan personalizado.', extremeCondition:'La condición de la propiedad requiere revisión antes del precio final.', largeUnit:'Unidades de este tamaño se revisan antes de cotizar.', restorationLevel:'Un turnover de restauración en condición muy pesada requiere revisión en sitio.', largeSpecialtyProject:'Proyectos especiales grandes se cotizan después de una visita.', addOnQuote:'Los servicios seleccionados requieren cotización personalizada.', noServices:'Selecciona al menos un servicio para recibir un precio.' },
+      errs:{ pmType:'Elige un tipo de servicio.', pmPropertyType:'Elige un tipo de propiedad.', pmUnits:'Ingresa el número de unidades.', pmFrequency:'Elige una frecuencia.', pmDays:'Ingresa los días por semana (1–7).', pmAreas:'Selecciona al menos un área.', pmCleaners:'Ingresa el número de limpiadores.', pmHoursPerDay:'Ingresa las horas por limpiador por día.', pmUnitType:'Elige un tipo de propiedad.', pmBedrooms:'Ingresa el número de habitaciones.', pmBathrooms:'Ingresa el número de baños.', pmTurnType:'Elige un tipo de turnover.', pmCondition:'Elige una condición.', pmHours:'Elige las horas por semana.', pmCustomHours:'Ingresa las horas personalizadas por semana.', pmAddonQty:'Ingresa una cantidad para cada servicio seleccionado.' },
+      admin:{ tab:'Administración de Propiedades', placeholder:'0 = valor provisional: se deriva de tu configuración de rentabilidad hasta que fijes una tarifa. Las tarifas por debajo de tu ingreso mínimo por hora se elevan al piso de rentabilidad.', community:'Áreas comunes / comunidad', turnover:'Unidad vacante / turnover', porter:'Day porter', addons:'Servicios adicionales', thresholds:'Umbrales de cotización personalizada' } },
+    admin:{ title:'Admin — detalle del cálculo', hide:'Oculto para clientes. Abre con #admin.', settings:'Configuración de precios', save:'Guardar', reset:'Restablecer', saved:'Configuración guardada.', close:'Cerrar admin' } } };
+const STATES = { AL:'Alabama',AK:'Alaska',AZ:'Arizona',AR:'Arkansas',CA:'California',CO:'Colorado',CT:'Connecticut',DE:'Delaware',DC:'District of Columbia',FL:'Florida',GA:'Georgia',HI:'Hawaii',ID:'Idaho',IL:'Illinois',IN:'Indiana',IA:'Iowa',KS:'Kansas',KY:'Kentucky',LA:'Louisiana',ME:'Maine',MD:'Maryland',MA:'Massachusetts',MI:'Michigan',MN:'Minnesota',MS:'Mississippi',MO:'Missouri',MT:'Montana',NE:'Nebraska',NV:'Nevada',NH:'New Hampshire',NJ:'New Jersey',NM:'New Mexico',NY:'New York',NC:'North Carolina',ND:'North Dakota',OH:'Ohio',OK:'Oklahoma',OR:'Oregon',PA:'Pennsylvania',RI:'Rhode Island',SC:'South Carolina',SD:'South Dakota',TN:'Tennessee',TX:'Texas',UT:'Utah',VT:'Vermont',VA:'Virginia',WA:'Washington',WV:'West Virginia',WI:'Wisconsin',WY:'Wyoming' };
+
+/* ---------------------------------------------------------------- 4. CUSTOMER WIZARD */
+const COMPANY_ID = (new URLSearchParams(location.search).get('company')||'default').replace(/[^\w.-]/g,'').slice(0,64) || 'default';
+let cfg = loadCompanyConfig(COMPANY_ID);
+/* Optional per-company pricing file hosted next to index.html: configs/<company>.json (exported from the admin JSON tab).
+   Load order: code defaults → configs/<company>.json → admin overrides saved in this browser. */
+/* Load order: code defaults → configs/agency.json (applies to ALL sub-accounts) → configs/<company>.json → admin overrides saved in this browser. */
+if(typeof fetch==='function' && location.protocol!=='file:'){ try{ const get = f => fetch(f,{cache:'no-store'}).then(r=>r.ok?r.json():null).catch(()=>null);
+  Promise.all([get('configs/agency.json'), COMPANY_ID!=='agency'?get(`configs/${COMPANY_ID}.json`):null]).then(([agency, company])=>{ if(!agency&&!company) return; const local = safeGet('oneapp.pricingConfig.'+COMPANY_ID); cfg = deepMerge(deepMerge(deepMerge(clone(DEFAULT_PRICING_CONFIG), agency||{}), company||{}), local?JSON.parse(local,jsonIn):{}); S.cfgDraft=null; render(); }); }catch(e){} }
+const S = { lang:'en', step:0, q:null, result:null, errors:[], admin: location.hash==='#admin', adminTab:'calc', adminMsg:'', cfgDraft:null, cfgJson:'' };
+const t = () => I18N[S.lang];
+const esc = s => String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const money = n => Number.isFinite(n)?'$'+Math.round(n).toLocaleString('en-US'):'$0';
+function newQuote(){ return { service:null, state:cfg.baseMarket, market:'', tierIndex:null, exactSqFt:'', frequency:null, moveType:null, condition:null, pc:{ projectType:null, phase:null, condition:null, options:{} }, commercial:{ visitsPerWeek:null }, windows:{ enabled:false, scope:'interior', access:'standard', count:'' }, carpet:{ enabled:false, sqft:'', condition:'normal', rooms:{} }, addOns:{}, allowLargeEstimate:false, pm:{ type:null, propertyType:null, units:'', commonAreaSqFt:'', frequency:null, daysPerWeek:'', areas:{}, tasks:{}, taskFreq:{}, cleaners:'', hoursPerDay:'', backup:false, dedicated:false, supervision:false, unitType:null, bedrooms:'', bathrooms:'', sqft:'', turnType:null, condition:null, hoursPerWeek:null, customHours:'', porterServices:{}, addOns:{} } }; }
+/** Ordered screens for the selected service (progressive disclosure). */
+function screens(q){ if(!q.service) return ['service'];
+  if(q.service==='propertyManagement'){ const t = q.pm?.type; const pmBase = { community:['pmPropertyType','pmUnits','pmFrequency','pmAreas','pmTasks','pmStaffing','pmAddons'], turnover:['pmUnitType','pmUnitSize','pmTurnType','pmCondition','pmAddons'], dayPorter:['pmPropertyType','pmHours','pmPorterServices','pmAddons'], addOnServices:['pmPropertyType','pmUnits','pmAddons'] }; return t ? ['service','pmType',...pmBase[t],'location','result'] : ['service','pmType']; } const base = { standard:['service','size','frequency','condition','addons','location'], deep:['service','size','condition','addons','location'], moveInOut:['service','size','moveType','condition','addons','location'], postConstruction:['service','sizeExact','projectType','phase','pcCondition','pcOptions','location'], commercial:['service','sizeExact','commercialFrequency','condition','addons','location'] }; return [...base[q.service],'result']; }
+const active = () => Object.keys(cfg.services).filter(s=>cfg.services[s].active);
+
+const optBtn = (data, value, label, desc, pressed) => `<button type="button" class="opt" aria-pressed="${pressed}" data-set="${data}" data-value="${esc(value)}"><span>${esc(label)}${desc?`<span class="d">${esc(desc)}</span>`:''}</span><span class="tick">${pressed?'✓':''}</span></button>`;
+const optList = (data, entries, current, cls='') => `<div class="opts ${cls}">${entries.map(([v,[l,d]])=>optBtn(data,v,l,d,String(current)===String(v))).join('')}</div>`;
+function numInput(id, label, value, suffix, hint){ return `<div class="field"><label for="${id}">${esc(label)}</label><div class="affix"><input id="${id}" class="input" type="number" inputmode="numeric" min="0" data-num="${id}" value="${value===''||value==null?'':esc(value)}">${suffix?`<span>${esc(suffix)}</span>`:''}</div>${hint?`<span class="hint">${esc(hint)}</span>`:''}</div>`; }
+
+function renderScreen(key){ const q=S.q, L=t();
+  switch(key){
+    case 'service': return `<div class="q">${L.q1}</div>${optList('service', active().map(s=>[s,L.services[s]]), q.service)}`;
+    case 'size': { const entries = TIER_LABELS.map((l,i)=>[i,[l+' '+L.sqft,'']]); entries.push(['over',['5,001+ '+L.sqft,'']]); return `<div class="q">${L.qSize}</div>${optList('tierIndex',entries,q.tierIndex,'two')}${q.tierIndex==='over'?numInput('exactSqFt',L.exact,q.exactSqFt,L.sqft):''}`; }
+    case 'sizeExact': return `<div class="q">${L.qSizeC}</div>${numInput('exactSqFt',L.exact,q.exactSqFt,L.sqft)}`;
+    case 'frequency': return `<div class="q">${L.qFreq}</div>${optList('frequency',Object.entries(L.freq),q.frequency)}`;
+    case 'moveType': return `<div class="q">${L.qMove}</div>${optList('moveType',Object.entries(L.move),q.moveType)}`;
+    case 'condition': return `<div class="q">${q.service==='commercial'?L.qCondC:L.qCond}</div>${optList('condition',Object.entries(L.cond).filter(([k])=>cfg.conditionFactors[k]!==undefined),q.condition)}`;
+    case 'commercialFrequency': return `<div class="q">${L.qCFreq}</div>${optList('commercial.visitsPerWeek',Object.keys(cfg.commercialPricing.ratePerSqFtPerVisit).map(n=>[n,[`${n}× ${L.perWeek}`,'']]),q.commercial.visitsPerWeek,'two')}`;
+    case 'projectType': return `<div class="q">${L.qType}</div>${optList('pc.projectType',Object.entries(L.ptype),q.pc.projectType)}`;
+    case 'phase': return `<div class="q">${L.qPhase}</div>${optList('pc.phase',Object.entries(L.phase),q.pc.phase)}`;
+    case 'pcCondition': return `<div class="q">${L.qPcCond}</div>${optList('pc.condition',Object.entries(L.pcond),q.pc.condition)}`;
+    case 'pcOptions': return `<div class="q">${L.qPcOpt}</div><div class="qh">${L.qAddH}</div><div class="opts two">${Object.keys(cfg.postConstructionPricing.options).map(k=>optBtn('pc.options.'+k,'toggle',L.pcopt[k],'',!!q.pc.options[k])).join('')}</div>`;
+    case 'addons': { const addons = getApplicableAddons(cfg,q.service), wp = cfg.windowPricing, cp = cfg.carpetPricing, showWin = q.service!=='commercial', showCarpet = q.service!=='commercial';
+      let html = `<div class="q">${L.qAdd}</div><div class="qh">${L.qAddH}</div><div class="opts">`;
+      if(showWin) html += optBtn('windows.enabled','toggle',L.windows,'',q.windows.enabled) + (q.windows.enabled?`<div class="sub"><div class="t">${L.winScope}</div><div class="chips">${['interior','interiorExterior'].map(sc=>`<button type="button" class="chip" aria-pressed="${q.windows.scope===sc}" data-set="windows.scope" data-value="${sc}" data-stay="1">${sc==='interior'?L.winInterior:L.winBoth}</button>`).join('')}</div><div class="t">${L.winAccess}</div><div class="chips">${Object.keys(wp.accessibility).map(a=>`<button type="button" class="chip" aria-pressed="${q.windows.access===a}" data-set="windows.access" data-value="${a}" data-stay="1">${L.access[a]}</button>`).join('')}</div>${wp.mode==='perWindow'?numInput('windows.count',L.winCount,q.windows.count,''):''}</div>`:'');
+      if(showCarpet) html += optBtn('carpet.enabled','toggle',L.carpet,'',q.carpet.enabled) + (q.carpet.enabled?`<div class="sub">${cp.mode==='sqft'?numInput('carpet.sqft',L.carpetSqFt,q.carpet.sqft,L.sqft):Object.entries(L.rooms).map(([k,l])=>numInput('carpet.rooms.'+k,l,q.carpet.rooms[k]??'','')).join('')}<div class="t">${L.carpetCond}</div><div class="chips">${Object.keys(cp.conditionFactors).map(c=>`<button type="button" class="chip" aria-pressed="${q.carpet.condition===c}" data-set="carpet.condition" data-value="${c}" data-stay="1">${L.ccond[c]}</button>`).join('')}</div></div>`:'');
+      for(const a of addons){ const qty = num(q.addOns[a.id]); html += optBtn('addOns.'+a.id,'toggle',a.name,a.description,qty>0) + (qty>0&&a.pricingType==='each'?`<div class="sub"><div class="row"><span class="t">${L.qty}</span><input class="input qty" type="number" inputmode="numeric" min="1" max="50" value="${qty}" data-num="addOns.${a.id}" aria-label="${esc(a.name)} ${L.qty}"></div></div>`:''); }
+      return html+'</div>'; }
+    case 'pmType': return `<div class="q">${L.pm.qType}</div>${optList('pm.type',Object.entries(L.pm.types),q.pm.type)}`;
+    case 'pmPropertyType': return `<div class="q">${L.pm.qPropertyType}</div>${optList('pm.propertyType',Object.entries(L.pm.propertyTypes).map(([k,v])=>[k,[v,'']]),q.pm.propertyType,'two')}`;
+    case 'pmUnits': return `<div class="q">${L.pm.qUnits}</div>${numInput('pm.units',L.pm.units,q.pm.units,'')}${numInput('pm.commonAreaSqFt',L.pm.commonSqFt,q.pm.commonAreaSqFt,L.sqft)}`;
+    case 'pmFrequency': return `<div class="q">${L.pm.qFrequency}</div><div class="opts two">${[1,2,3,5,6,7].map(n=>optBtn('pm.frequency',n,`${n}× ${L.pm.perWeek}`,'',q.pm.frequency===n)).join('')}<button type="button" class="opt" aria-pressed="${q.pm.frequency==='custom'}" data-set="pm.frequency" data-value="custom" data-stay="1"><span>${L.pm.custom}</span><span class="tick">${q.pm.frequency==='custom'?'✓':''}</span></button></div>${q.pm.frequency==='custom'?numInput('pm.daysPerWeek',L.pm.daysPerWeek,q.pm.daysPerWeek,''):''}`;
+    case 'pmAreas': return `<div class="q">${L.pm.qAreas}</div><div class="qh">${L.qAddH}</div><div class="opts two">${Object.entries(L.pm.areas).map(([k,v])=>optBtn('pm.areas.'+k,'toggle',v,'',!!q.pm.areas[k])).join('')}</div>`;
+    case 'pmTasks': { const daily = Object.keys(L.pm.tasks).filter(k=>!(k in cfg.propertyManagementPricing.community.periodicTaskHours)), periodic = Object.keys(cfg.propertyManagementPricing.community.periodicTaskHours);
+      const task = (k,def) => optBtn('pm.tasks.'+k,'toggle',L.pm.tasks[k],'',!!q.pm.tasks[k]) + (q.pm.tasks[k]?`<div class="sub"><div class="chips">${Object.entries(L.pm.taskFreq).map(([f,l])=>`<button type="button" class="chip" aria-pressed="${(q.pm.taskFreq[k]||def)===f}" data-set="pm.taskFreq.${k}" data-value="${f}" data-stay="1">${l}</button>`).join('')}</div></div>`:'');
+      return `<div class="q">${L.pm.qTasks}</div><div class="qh">${L.pm.tasksHint}</div><div class="sub" style="margin-bottom:10px"><div class="t">${L.pm.dailyTasks}</div></div><div class="opts">${daily.map(k=>task(k,'daily')).join('')}</div><div class="sub" style="margin:14px 0 10px"><div class="t">${L.pm.periodicTasks}</div></div><div class="opts">${periodic.map(k=>task(k,'monthly')).join('')}</div>`; }
+    case 'pmStaffing': { const sug = pmSuggestedHoursPerVisit(cfg,q.pm), days = q.pm.frequency==='custom'?num(q.pm.daysPerWeek):num(q.pm.frequency), wk = num(q.pm.cleaners)*num(q.pm.hoursPerDay)*days;
+      return `<div class="q">${L.pm.qStaffing}</div>${numInput('pm.cleaners',L.pm.cleaners,q.pm.cleaners,'')}${numInput('pm.hoursPerDay',L.pm.hoursPerDay,q.pm.hoursPerDay,'',L.pm.suggested.replace('{h}',sug))}${wk>0?`<p class="hint" style="margin-top:8px">${L.pm.weeklyHours.replace('{h}',r2(wk))}</p>`:''}<div class="opts" style="margin-top:14px">${optBtn('pm.backup','toggle',L.pm.backup,'',q.pm.backup)}${optBtn('pm.dedicated','toggle',L.pm.dedicated,'',q.pm.dedicated)}${optBtn('pm.supervision','toggle',L.pm.supervision,'',q.pm.supervision)}</div>`; }
+    case 'pmUnitType': return `<div class="q">${L.pm.qUnitType}</div>${optList('pm.unitType',Object.entries(L.pm.unitTypes).map(([k,v])=>[k,[v,'']]),q.pm.unitType,'two')}`;
+    case 'pmUnitSize': return `<div class="q">${L.pm.qUnitSize}</div>${numInput('pm.bedrooms',L.pm.bedrooms,q.pm.bedrooms,'')}${numInput('pm.bathrooms',L.pm.bathrooms,q.pm.bathrooms,'')}${numInput('pm.sqft',L.pm.sqft,q.pm.sqft,L.sqft,L.pm.sqftOptional)}`;
+    case 'pmTurnType': return `<div class="q">${L.pm.qTurnType}</div>${optList('pm.turnType',Object.entries(L.pm.turnTypes),q.pm.turnType)}`;
+    case 'pmCondition': return `<div class="q">${L.pm.qCondition}</div>${optList('pm.condition',Object.entries(L.pm.conditions),q.pm.condition)}`;
+    case 'pmHours': return `<div class="q">${L.pm.qHours}</div><div class="opts two">${[10,20,30,40].map(n=>optBtn('pm.hoursPerWeek',n,`${n} ${L.pm.hoursPerWeek.toLowerCase()}`,'',q.pm.hoursPerWeek===n)).join('')}<button type="button" class="opt" aria-pressed="${q.pm.hoursPerWeek==='custom'}" data-set="pm.hoursPerWeek" data-value="custom" data-stay="1"><span>${L.pm.custom}</span><span class="tick">${q.pm.hoursPerWeek==='custom'?'✓':''}</span></button></div>${q.pm.hoursPerWeek==='custom'?numInput('pm.customHours',L.pm.customHours,q.pm.customHours,''):''}`;
+    case 'pmPorterServices': return `<div class="q">${L.pm.qPorterServices}</div><div class="qh">${L.qAddH}</div><div class="opts two">${Object.entries(L.pm.porterServices).map(([k,v])=>optBtn('pm.porterServices.'+k,'toggle',v,'',!!q.pm.porterServices[k])).join('')}</div>`;
+    case 'pmAddons': return `<div class="q">${L.pm.qAddons}</div><div class="qh">${L.qAddH}</div><div class="opts">${getApplicableAddons(cfg,'propertyManagement').map(a=>{ const sel=q.pm.addOns[a.id]||{}, needQty=['perItem','perWindow','perSqFt','perRoom','perVisit','hourly'].includes(a.pricingType), priced = a.pricingType==='hourly' || (a.price>0 && a.pricingType!=='customQuote');
+      return optBtn('pm.addOns.'+a.id+'.on','toggle',a.name,priced?'':L.pm.quoteRequired,!!sel.on) + (sel.on&&priced&&needQty?`<div class="sub"><div class="row"><span class="t">${L.pm.addonQty[a.pricingType]}</span><input class="input qty" type="number" inputmode="numeric" min="1" value="${sel.qty??''}" data-num="pm.addOns.${a.id}.qty" aria-label="${esc(a.name)}"></div>${a.highAccessReview?`<div class="chips"><button type="button" class="chip" aria-pressed="${!!sel.highAccess}" data-set="pm.addOns.${a.id}.highAccess" data-value="toggle">${L.pm.highAccess}</button></div>`:''}</div>`:''); }).join('')}</div>`;
+    case 'location': return `<div class="q">${L.qState}</div><div class="field"><label for="state">${L.state}</label><select id="state" class="select" data-sel="state">${Object.entries(STATES).map(([k,v])=>`<option value="${k}"${q.state===k?' selected':''}>${v}</option>`).join('')}</select></div><div class="field"><label for="market">${L.city}</label><input id="market" class="input" type="text" data-text="market" value="${esc(q.market)}"></div>`;
+    case 'result': return renderResult();
+  } return ''; }
+
+function serviceLines(q){ const L=t(), out=[]; if(q.windows.enabled&&q.service!=='commercial') out.push(L.windows); if(q.carpet.enabled&&q.service!=='commercial') out.push(L.carpet+(q.carpet.sqft?` (${q.carpet.sqft} ${L.sqft})`:'')); for(const a of getApplicableAddons(cfg,q.service)){ const n=num(q.addOns[a.id]); if(n>0) out.push(a.name+(a.pricingType==='each'&&n>1?` ×${n}`:'')); } if(q.service==='postConstruction') for(const [k,on] of Object.entries(q.pc.options)) if(on) out.push(L.pcopt[k]); return out; }
+function renderPmSummary(q, r){ const L=t().pm, pm=q.pm, d=r&&r.debug, rows=[]; const on = o => Object.keys(o||{}).filter(k=>o[k]);
+  rows.push([L.res.service, L.types[pm.type][0]]);
+  if(pm.type==='turnover'){ rows.push([L.res.propertyType, L.unitTypes[pm.unitType]]); rows.push([L.res.bedrooms, String(num(pm.bedrooms))]); rows.push([L.res.bathrooms, String(num(pm.bathrooms))]); if(num(pm.sqft)>0) rows.push([L.res.sqft, `${num(pm.sqft).toLocaleString()} ${t().sqft}`]); rows.push([L.res.turnType, L.turnTypes[pm.turnType][0]]); rows.push([L.res.condition, L.conditions[pm.condition][0]]); }
+  else { rows.push([L.res.propertyType, L.propertyTypes[pm.propertyType]]); if(num(pm.units)>0) rows.push([L.res.units, num(pm.units).toLocaleString()]); }
+  if(pm.type==='community'){ const days = pm.frequency==='custom'?num(pm.daysPerWeek):num(pm.frequency); rows.push([L.res.frequency, L.res.visits.replace('{n}',days)]); rows.push([L.res.areas, on(pm.areas).map(k=>L.areas[k]).join(', ')||t().sum.none]); const tk = on(pm.tasks); if(tk.length) rows.push([L.res.tasks, tk.map(k=>`${L.tasks[k]} (${L.taskFreq[pm.taskFreq[k]||(k in cfg.propertyManagementPricing.community.periodicTaskHours?'monthly':'daily')]})`).join(', ')]); rows.push([L.res.staffing, L.res.cleaners.replace('{n}',num(pm.cleaners))+(pm.backup?` · ${L.backup}`:'')+(pm.dedicated?` · ${L.dedicated}`:'')+(pm.supervision?` · ${L.supervision}`:'')]); if(d&&d.pm){ rows.push([L.res.weeklyHours, String(d.pm.weeklyHours)]); rows.push([L.res.monthlyHours, String(d.pm.monthlyHours)]); } }
+  if(pm.type==='dayPorter'){ rows.push([L.res.hoursPerWeek, String(d?d.pm.hoursPerWeek:num(pm.hoursPerWeek==='custom'?pm.customHours:pm.hoursPerWeek))]); const ps = on(pm.porterServices); if(ps.length) rows.push([L.res.service, ps.map(k=>L.porterServices[k]).join(', ')]); }
+  const adds = getApplicableAddons(cfg,'propertyManagement').filter(a=>pm.addOns[a.id]?.on).map(a=>a.name + ((r&&r.quoteRequired||[]).includes(a.id)?` (${L.quoteRequired})`:'')); if(adds.length) rows.push([L.res.addons, adds.join(', ')]);
+  rows.push([t().sum.location, STATES[q.state]+(q.market?`, ${q.market}`:'')]);
+  return `<div class="summary"><div class="tier" style="font-size:13px;font-weight:500;color:var(--ink-2);margin-bottom:10px">${L.res.title}</div><dl>${rows.map(([k,v])=>`<dt>${esc(k)}</dt><dd>${esc(v)}</dd>`).join('')}</dl></div>`; }
+function renderSummary(q, r){ if(q.service==='propertyManagement') return renderPmSummary(q, r); const L=t(), rows=[[L.sum.type, L.services[q.service][0]]];
+  if(q.service==='postConstruction'||q.service==='commercial') rows.push([L.sum.size, `${Number(q.exactSqFt).toLocaleString()} ${L.sqft}`]); else rows.push([L.sum.size, (q.tierIndex==='over'?`${Number(q.exactSqFt).toLocaleString()}`:TIER_LABELS[q.tierIndex])+' '+L.sqft]);
+  if(q.service==='standard') rows.push([L.sum.freq, L.freq[q.frequency][0]]); if(q.service==='commercial') rows.push([L.sum.freq, `${q.commercial.visitsPerWeek}× ${L.perWeek}`]); if(q.service==='moveInOut') rows.push([L.sum.type, L.move[q.moveType][0]]);
+  if(q.service==='postConstruction'){ rows.push([L.sum.phase, L.phase[q.pc.phase][0]]); rows.push([L.sum.condition, L.pcond[q.pc.condition][0]]); } else rows.push([L.sum.condition, L.cond[q.condition][0]]);
+  const s = serviceLines(q); rows.push([L.sum.services, s.length?s.join(', '):L.sum.none]); rows.push([L.sum.location, STATES[q.state]+(q.market?`, ${q.market}`:'')]);
+  return `<div class="summary"><dl>${rows.map(([k,v])=>`<dt>${esc(k)}</dt><dd>${esc(v)}</dd>`).join('')}</dl></div>`; }
+function renderResult(){ const L=t(), r=S.result, q=S.q; if(!r) return '';
+  if(r.status==='customQuote'||r.status==='review'){ return `<div class="custom"><h2>${L.customTitle}</h2><div class="callout">${(r.reasons||[]).map(x=>esc(q.service==='propertyManagement'?(L.pm.reasons[x]||L.reasons[x]||x):(L.reasons[x]||L.pm.reasons[x]||x))).join(' ')}</div>${r.allowEstimate?`<p style="margin-top:12px"><button type="button" class="btn btn-ghost btn-sm" data-action="allowEstimate">${L.orEstimate}</button></p>`:''}</div>${renderSummary(q,r)}`; }
+  const per = r.unit==='visit'?L.perVisit:r.unit==='month'?L.pm.res.perMonth:r.unit==='unit'?L.pm.res.perUnit:L.perJob, show = cfg.tierWording.showPercentages;
+  const card = (k,amt,cls) => `<div class="pcard ${cls}"><div class="tier">${L.tiers[k][0]}</div><div class="name">${show&&k==='low'?L.pctLow:show&&k==='premium'?L.pctPrem:''}</div><div class="amt">${money(amt)}</div><div class="unit">${per}${r.monthly?`<br>${L.perMonth.replace('{a}',money(r.monthly[k]))}`:''}${r.extra?[r.extra[k].perVisit!=null?L.pm.res.perVisit.replace('{a}',money(r.extra[k].perVisit)):'',r.extra[k].weekly!=null?L.pm.res.perWeek.replace('{a}',money(r.extra[k].weekly)):'',r.extra[k].hourly!=null?L.pm.res.perHour.replace('{a}',money(r.extra[k].hourly)):''].filter(Boolean).map(x=>`<br>${x}`).join(''):''}</div></div>`;
+  return `<div class="q">${L.resultTitle}</div><div class="cards">${card('low',r.low,'low')}${card('recommended',r.recommended,'rec')}${card('premium',r.premium,'prem')}</div>${q.service==='propertyManagement'?`<div class="qh" style="text-align:center;margin-top:-6px">${r.unit==='month'?L.pm.res.recommendedMonthly:r.unit==='unit'?L.pm.res.pricePerUnit:''}</div>`:''}${renderSummary(q,r)}${r.quoteRequired&&r.quoteRequired.length?`<div class="callout">${L.pm.res.quoteNote}</div>`:''}<p class="note">${L.resultNote}</p>`; }
+
+/* ---------------------------------------------------------------- 5. ADMIN / DEBUG (hidden; open with #admin) */
+function renderAdmin(){ const L=t().admin, r=S.result, d=r&&r.debug; let calc='';
+  if(d){ const rows=[
+      ['Base price',money(d.basePrice),d.tier||(d.ratePerSqFt?`$${d.ratePerSqFt}/sq ft`:'')],
+      ['Over 5,000 sq ft',d.over5000?money(d.over5000):null],
+      ['Raw state factor',d.rawStateFactor?`×${d.rawStateFactor}`:null,'market signal only — not applied directly'],
+      ['Raw market factor',d.rawMarketFactor&&d.rawMarketFactor!==1?`×${d.rawMarketFactor}`:null],
+      ['Controlled geographic adjustment',money(d.geoAdjustment),d.geoPercent!=null?`${(d.geoPercent*100).toFixed(1)}% of base (state + market, capped, service-sensitized)`:''],
+      ['Condition adjustment',money(d.conditionAdjustment),d.conditionPercent!=null?`${(d.conditionPercent*100).toFixed(1)}% of base${d.conditionFactor?` — ${d.conditionFactor}× before frequency dampening`:''}`:`×${d.conditionFactor}`],
+      ['Phase factor',d.phaseFactor?`×${d.phaseFactor}`:null],
+      ['Service price (base + geo + condition)',money(d.servicePrice)],
+      ['Window adjustment',d.windows.amount?money(d.windows.amount):null,d.windows.method==='percent'?`${(d.windows.percent*100).toFixed(0)}% package`:d.windows.method==='perWindow'?`${d.windows.count} × $${d.windows.unit}`:''],
+      ['Carpet calculation',d.carpet.recommended?money(d.carpet.recommended):null,d.carpet.method==='sqft'?`${d.carpet.sqft} carpet sq ft · low ${money(d.carpet.low)} / premium ${money(d.carpet.premium)}`:d.carpet.method],
+      ...(d.pcOptions||[]).map(o=>['Option — '+o.id,money(o.amount)]),
+      ...d.addons.lines.map(l=>['Add-on — '+l.name+(l.qty>1?` ×${l.qty}`:''),money(l.amount)]),
+      ...(d.pm?[['PM staffing / hours',d.pm.weeklyHours!=null?`${d.pm.weeklyHours} hrs/wk · ${d.pm.monthlyHours} hrs/mo`:(d.pm.hours!=null?`${d.pm.hours} hrs`:''),d.pm.derived?`rate ${money(d.pm.rate||0)}/hr DERIVED from profitability (placeholder)`:(d.pm.rate?`rate ${money(d.pm.rate)}/hr`:'')],['PM labor cost',d.pm.laborCost!=null?money(d.pm.laborCost):null]]:[]),
+      ...(d.addonsQuoteRequired&&d.addonsQuoteRequired.length?[['Additional quote required',d.addonsQuoteRequired.join(', ')]]:[]),
+      ['Estimated labor hours',String(d.laborHours)],
+      ['Estimated labor cost',d.laborCost!=null?money(d.laborCost):null],
+      ['Overhead estimate',d.overheadCost!=null?money(d.overheadCost):null],
+      ['Pre-floor price',d.preFloorPrice!=null?money(d.preFloorPrice):null],
+      ['Profitability floor',money(d.profitabilityFloor),d.floorApplied?'APPLIED — pre-floor price was below this':'not binding'],
+      ['Revenue per labor hour',d.revenuePerHour!=null?money(d.revenuePerHour):null],
+      ['Effective price / sq ft',d.effectivePerSqFt?'$'+d.effectivePerSqFt:null]
+    ].filter(x=>x[1]!=null);
+    const flags = (d.flags||[]).length ? `<div class="callout" style="margin-top:10px">${d.flags.map(f=>esc(f)).join('<br>')}</div>` : '';
+    calc = `<table class="dbg"><tbody>${rows.map(([k,v,n])=>`<tr><td>${esc(k)}${n?`<span class="n">${esc(n)}</span>`:''}</td><td>${esc(v)}</td></tr>`).join('')}<tr class="t"><td>Recommended</td><td>${money(d.recommended)}</td></tr><tr><td>Low (× ${cfg.pricingTiers.low}, never below the floor)</td><td>${money(d.low)}</td></tr><tr><td>Premium (× ${cfg.pricingTiers.premium})</td><td>${money(d.premium)}</td></tr></tbody></table>${flags}`; }
+  else if(r) calc = `<p class="small muted">Status: ${r.status} — ${(r.reasons||r.errors||[]).join(', ')}</p>`; else calc = '<p class="small muted">Complete a quote to see the calculation.</p>';
+  const c = S.cfgDraft || (S.cfgDraft = clone(cfg)); const n = (path,o={}) => { const v = path.split('.').reduce((a,k)=>a?.[k],c); return `<input class="input" type="number" step="${o.step??0.01}" value="${typeof v==='number'?(o.pct?Math.round(v*10000)/100:v):''}" data-cfg="${path}"${o.pct?' data-pct="1"':''} aria-label="${path}">`; };
+  const tbl = (head,rows) => `<table class="cfg">${head?`<thead><tr>${head.map(h=>`<th>${h}</th>`).join('')}</tr></thead>`:''}<tbody>${rows.map(r=>`<tr>${r.map(x=>`<td>${x}</td>`).join('')}</tr>`).join('')}</tbody></table>`;
+  const tabs = { calc:'Calculation', pricing:'Base pricing', factors:'State & market', options:'Windows, carpet, add-ons', pc:'Post-construction & commercial', pm:t().pm.admin.tab, floor:'Profitability & rounding', json:'JSON' };
+  let body='';
+  if(S.adminTab==='calc') body = calc;
+  if(S.adminTab==='pricing') body = tbl(['Tier','Initial','Weekly','Bi-Weekly','Monthly','Deep','Move-Out'],TIER_LABELS.map((l,i)=>[l,n(`standardPricing.initial.${i}`,{step:1}),n(`standardPricing.weekly.${i}`,{step:1}),n(`standardPricing.biWeekly.${i}`,{step:1}),n(`standardPricing.monthly.${i}`,{step:1}),n(`deepPricing.${i}`,{step:1}),n(`moveOutPricing.${i}`,{step:1})])) + '<br>' + tbl(null,[['Move-in factor (× move-out table)',n('moveInFactor')],['Over 5,000: $/extra sq ft — initial / weekly / bi-weekly / monthly / deep / move-out',`<span class="row">${['initial','weekly','biWeekly','monthly','deep','moveOut'].map(k=>n('over5000.ratePerExtraSqFt.'+k,{step:.005})).join('')}</span>`],['Custom quote above (sq ft)',n('over5000.customQuoteAboveSqFt',{step:100})],['Low tier × / Premium tier ×',`<span class="row">${n('pricingTiers.low')}${n('pricingTiers.premium')}</span>`],['Show "20% less / 15% more" wording','<label class="row"><input type="checkbox" data-cfgbool="tierWording.showPercentages"'+(c.tierWording.showPercentages?' checked':'')+'> enabled</label>'],...Object.keys(c.services).map(s=>[`Service active — ${s}`,'<label class="row"><input type="checkbox" data-cfgbool="services.'+s+'.active"'+(c.services[s].active?' checked':'')+'> active</label>'])]);
+  if(S.adminTab==='factors') body = tbl(null,[['Base market (state)',`<select class="select" data-cfgsel="baseMarket">${Object.keys(STATES).map(k=>`<option value="${k}"${c.baseMarket===k?' selected':''}>${STATES[k]}</option>`).join('')}</select>`],['Default city / market factor',n('marketFactors.default',{step:.01})],['Condition — normal / moderate / heavy / very heavy',`<span class="row">${['normal','moderate','heavy','veryHeavy'].map(k=>n('conditionFactors.'+k,{step:.05})).join('')}</span>`]]) + '<br>' + tbl(['State','Factor','Normalized to base market'],Object.keys(STATES).map(k=>[STATES[k],n('stateFactors.'+k,{step:.001}),`<span class="muted">×${calculateStateFactor(c,k)}</span>`]))
+    + '<br>' + tbl(null,[
+      ['Compression curve — state: first-half slope / breakpoint / beyond-breakpoint slope',`<span class="row">${n('geography.curve.slope1',{step:.05})}${n('geography.curve.breakpoint',{step:.05})}${n('geography.curve.slope2',{step:.05})}</span>`],
+      ['Compression curve — market/city: first-half slope / breakpoint / beyond-breakpoint slope',`<span class="row">${n('geography.marketCurve.slope1',{step:.05})}${n('geography.marketCurve.breakpoint',{step:.05})}${n('geography.marketCurve.slope2',{step:.05})}</span>`],
+      ['Max state adjustment — increase / decrease',`<span class="row">${n('geography.maxResidentialStateAdjustment',{pct:1})}${n('geography.maxResidentialDiscount',{pct:1})}</span>`],
+      ['Max market/city adjustment',n('geography.maxResidentialMarketAdjustment',{pct:1})],
+      ['Max combined geographic adjustment (state + market, either direction)',n('geography.maxCombinedGeographicAdjustment',{pct:1})],
+      ['Add-on geographic sensitivity (fraction of the compressed state/market signal)',n('geography.specialtyStateSensitivity',{pct:1})],
+    ])
+    + '<br>' + tbl(['Frequency / service','How much of the compressed adjustment reaches the customer'],Object.entries({initial:'Initial cleaning',weekly:'Weekly',biWeekly:'Bi-weekly',monthly:'Monthly',deep:'Deep cleaning',moveIn:'Move-in',moveOut:'Move-out',commercial:'Commercial',postConstruction:'Post-construction',propertyManagement:'Property management'}).map(([k,label])=>[label,n('geography.stateSensitivity.'+k,{pct:1})]))
+    + '<br>' + tbl(['Frequency','How much of the condition adjustment reaches the customer'],Object.entries({initial:'Initial cleaning',weekly:'Weekly',biWeekly:'Bi-weekly',monthly:'Monthly'}).map(([k,label])=>[label,n('geography.conditionFrequencySensitivity.'+k,{pct:1})]));
+  if(S.adminTab==='options') body = tbl(null,[['Window model',`<select class="select" data-cfgsel="windowPricing.mode"><option value="percent"${c.windowPricing.mode==='percent'?' selected':''}>Package % of service price</option><option value="perWindow"${c.windowPricing.mode==='perWindow'?' selected':''}>Per window</option></select>`],['Window package %',n('windowPricing.packagePercent',{pct:1})],['Per window — interior / interior + exterior',`<span class="row">${n('windowPricing.perWindow.interior',{step:1})}${n('windowPricing.perWindow.interiorExterior',{step:1})}</span>`],['Second-floor access factor',n('windowPricing.accessibility.secondFloor',{step:.05})],['Carpet model',`<select class="select" data-cfgsel="carpetPricing.mode"><option value="sqft"${c.carpetPricing.mode==='sqft'?' selected':''}>By carpet sq ft</option><option value="perRoom"${c.carpetPricing.mode==='perRoom'?' selected':''}>Per room / hallway / stairs</option></select>`],['Carpet $/sq ft — low / recommended / premium',`<span class="row">${['low','recommended','premium'].map(k=>n('carpetPricing.ratePerSqFt.'+k,{step:.01})).join('')}</span>`],['Carpet minimum ($) · heavy soil × · pet odor ×',`<span class="row">${n('carpetPricing.minimum',{step:5})}${n('carpetPricing.conditionFactors.heavySoil',{step:.05})}${n('carpetPricing.conditionFactors.petOdor',{step:.05})}</span>`],['Per-room — room / hallway / landing / stair',`<span class="row">${['room','hallway','landing','stairs'].map(k=>n('carpetPricing.perRoom.'+k,{step:1})).join('')}</span>`]]) + '<br>' + tbl(['Add-on','Price','Type','Services','Active'],c.addOns.map((a,i)=>[a.name,n(`addOns.${i}.price`,{step:1}),a.pricingType,a.applicableServices.join(', ')||'—','<input type="checkbox" data-cfgbool="addOns.'+i+'.active"'+(a.active?' checked':'')+'>']));
+  if(S.adminTab==='pc') body = tbl(null,[['Residential $/sq ft · minimum',`<span class="row">${n('postConstructionPricing.residentialRatePerSqFt')}${n('postConstructionPricing.residentialMinimum',{step:25})}</span>`],['Commercial tiers $/sq ft (<5k, <10k, <25k, <50k, <100k, 100k+)',`<span class="row">${c.postConstructionPricing.commercialTiers.map((_,i)=>n(`postConstructionPricing.commercialTiers.${i}.1`)).join('')}</span>`],['Commercial minimum',n('postConstructionPricing.commercialMinimum',{step:25})],['Phase — final / touch-up / multi-phase',`<span class="row">${['final','finalTouchUp','multiPhase'].map(k=>n('postConstructionPricing.phaseFactors.'+k)).join('')}</span>`],['Condition — light / normal / heavy / residue',`<span class="row">${['lightDust','normalDust','heavyDust','heavyResidue'].map(k=>n('postConstructionPricing.conditionFactors.'+k,{step:.05})).join('')}</span>`],...Object.entries(c.postConstructionPricing.options).map(([k,o])=>[`Option — ${k} (${o.type})`,n(`postConstructionPricing.options.${k}.value`,{step:o.type==='percent'?.01:1})]),['Custom quote — residential / commercial max sq ft',`<span class="row">${n('postConstructionPricing.customQuote.residentialMaxSqFt',{step:500})}${n('postConstructionPricing.customQuote.commercialMaxSqFt',{step:5000})}</span>`],['Commercial $/sq ft per visit — 1× / 2× / 3× / 5×',`<span class="row">${['1','2','3','5'].map(k=>n('commercialPricing.ratePerSqFtPerVisit.'+k,{step:.001})).join('')}</span>`],['Commercial minimum visit · custom quote above sq ft',`<span class="row">${n('commercialPricing.minimumVisitPrice',{step:5})}${n('commercialPricing.customQuoteAboveSqFt',{step:1000})}</span>`]]);
+  if(S.adminTab==='floor') body = tbl(null,[['Minimum job price',n('profitability.minimumJobPrice',{step:5})],['Minimum hourly revenue',n('profitability.minimumHourlyRevenue',{step:1})],['Labor cost / hour',n('profitability.laborCostPerHour',{step:.5})],['Overhead %',n('profitability.overheadPercent',{pct:1})],['Target margin %',n('profitability.targetMargin',{pct:1})],['Minimum post-construction price',n('profitability.minimumPostConstructionPrice',{step:25})],['Minimum commercial visit',n('profitability.minimumCommercialVisit',{step:5})],['Production sq ft / hour — standard / initial / deep / move / PC res / PC com / commercial',`<span class="row">${['standard','initial','deep','moveInOut','postConstructionResidential','postConstructionCommercial','commercial'].map(k=>n('profitability.productionSqFtPerHour.'+k,{step:10})).join('')}</span>`],['Company id for this browser (from ?company= in the URL)',`<span class="muted">${esc(COMPANY_ID)}</span>`],['Rounding step ($)',n('rounding.step',{step:1})],['Exact pricing (no rounding)','<label class="row"><input type="checkbox" data-cfgbool="rounding.exactPricing"'+(c.rounding.exactPricing?' checked':'')+'> enabled</label>']]);
+  if(S.adminTab==='pm'){ const A = t().pm.admin, Lp = t().pm, cm = c.propertyManagementPricing.community, tv = c.propertyManagementPricing.turnover, sel=(path,options)=>`<select class="select" data-cfgsel="${path}">${Object.entries(options).map(([k,v])=>`<option value="${k}"${getP(c,path)===k?' selected':''}>${v}</option>`).join('')}</select>`;
+    body = `<p class="small muted" style="margin-bottom:10px">${A.placeholder} (${money(pmDerivedRate(c))}/hr)</p>`
+    + `<h3 style="margin:8px 0">${A.community}</h3>` + tbl(null,[['Pricing method',sel('propertyManagementPricing.community.pricingMethod',{staffing:'Staffing (labor hours × bill rate)',perUnit:'Per unit (units × monthly rate)'})],['Hourly bill rate ($/hr)',n('propertyManagementPricing.community.hourlyBillRate',{step:.5})],['Per-unit monthly rate ($)',n('propertyManagementPricing.community.perUnitMonthlyRate',{step:.25})],['Minimum monthly price ($)',n('propertyManagementPricing.community.minimumMonthlyPrice',{step:25})],['Weeks per month (monthly conversion)',n('propertyManagementPricing.weeksPerMonth',{step:.01})],['Frequency multipliers — 1× / 2× / 3× / 5× / 6× / 7× / custom',`<span class="row">${['1','2','3','5','6','7','custom'].map(k=>n('propertyManagementPricing.community.frequencyMultipliers.'+k)).join('')}</span>`],['Staffing defaults — cleaners / hours per day',`<span class="row">${n('propertyManagementPricing.community.staffing.defaultCleaners',{step:1})}${n('propertyManagementPricing.community.staffing.defaultHoursPerDay',{step:.5})}</span>`],['Backup × / dedicated × / supervision ×',`<span class="row">${n('propertyManagementPricing.community.staffing.backupCoverageFactor')}${n('propertyManagementPricing.community.staffing.dedicatedStaffFactor')}${n('propertyManagementPricing.community.staffing.supervisionFactor')}</span>`],['Extra minutes per unit per visit',n('propertyManagementPricing.community.unitMinutesPerVisit',{step:.05})]])
+    + `<h3 style="margin:14px 0 8px">Common-area minutes per visit (suggestion model)</h3>` + tbl(['Area','Minutes'],Object.keys(cm.areaMinutesPerVisit).map(k=>[Lp.areas[k]||k,n('propertyManagementPricing.community.areaMinutesPerVisit.'+k,{step:5})]))
+    + `<h3 style="margin:14px 0 8px">Periodic task hours per occurrence</h3>` + tbl(['Task','Hours'],Object.keys(cm.periodicTaskHours).map(k=>[Lp.tasks[k]||k,n('propertyManagementPricing.community.periodicTaskHours.'+k,{step:.25})]))
+    + `<h3 style="margin:14px 0 8px">${A.turnover}</h3>` + tbl(null,[['Base price — apartment / condo / townhome / managed home',`<span class="row">${['apartment','condo','townhome','managedHome'].map(k=>n(`propertyManagementPricing.turnover.${k}.basePrice`,{step:5})).join('')}</span>`],['Bedroom price / bathroom price ($)',`<span class="row">${n('propertyManagementPricing.turnover.bedroomPrice',{step:5})}${n('propertyManagementPricing.turnover.bathroomPrice',{step:5})}</span>`],['Square-foot pricing — enabled / $ per sq ft',`<span class="row"><input type="checkbox" data-cfgbool="propertyManagementPricing.turnover.squareFootPricing.enabled"${tv.squareFootPricing.enabled?' checked':''}>${n('propertyManagementPricing.turnover.squareFootPricing.rate',{step:.01})}</span>`],['Turnover type × — light / standard / deep / move-out / move-in ready / heavy',`<span class="row">${['light','standard','deep','moveOut','moveInReady','heavy'].map(k=>n('propertyManagementPricing.turnover.turnoverTypeFactors.'+k,{step:.05})).join('')}</span>`],['Condition × — normal / light / moderate / heavy / very heavy',`<span class="row">${['normal','light','moderate','heavy','veryHeavy'].map(k=>n('propertyManagementPricing.turnover.conditionFactors.'+k,{step:.05})).join('')}</span>`],['Minimum job price ($)',n('propertyManagementPricing.turnover.minimumJobPrice',{step:5})],['Large unit — sq ft threshold / factor',`<span class="row">${n('propertyManagementPricing.turnover.largeUnit.sqft',{step:100})}${n('propertyManagementPricing.turnover.largeUnit.factor',{step:.05})}</span>`],['Labor estimate (used when prices are 0) — base hrs / per bedroom / per bathroom / sq ft per hour',`<span class="row">${n('propertyManagementPricing.turnover.laborHoursEstimate.base',{step:.25})}${n('propertyManagementPricing.turnover.laborHoursEstimate.perBedroom',{step:.25})}${n('propertyManagementPricing.turnover.laborHoursEstimate.perBathroom',{step:.25})}${n('propertyManagementPricing.turnover.laborHoursEstimate.sqFtPerHour',{step:10})}</span>`]])
+    + `<h3 style="margin:14px 0 8px">${A.porter}</h3>` + tbl(null,[['Hourly rate ($/hr)',n('propertyManagementPricing.dayPorter.hourlyRate',{step:.5})],['Minimum weekly hours',n('propertyManagementPricing.dayPorter.minimumWeeklyHours',{step:1})],['Minimum monthly price ($)',n('propertyManagementPricing.dayPorter.minimumMonthlyPrice',{step:25})]])
+    + `<h3 style="margin:14px 0 8px">${A.addons}</h3>` + tbl(['Add-on','Price','Method','Active'],c.propertyManagementPricing.addOns.map((a,i)=>[a.name,n(`propertyManagementPricing.addOns.${i}.price`,{step:.5}),sel(`propertyManagementPricing.addOns.${i}.pricingType`,{perItem:'Per item',perWindow:'Per window',perSqFt:'Per sq ft',perRoom:'Per room',perVisit:'Per visit',hourly:'Hourly',customQuote:'Custom quote'}),`<input type="checkbox" data-cfgbool="propertyManagementPricing.addOns.${i}.active"${a.active!==false?' checked':''}>`]))
+    + `<h3 style="margin:14px 0 8px">${A.thresholds}</h3>` + tbl(null,[['Community — max units / max common-area sq ft / max cleaners',`<span class="row">${n('propertyManagementPricing.community.customQuote.maxUnits',{step:50})}${n('propertyManagementPricing.community.customQuote.maxCommonAreaSqFt',{step:5000})}${n('propertyManagementPricing.community.customQuote.maxCleaners',{step:1})}</span>`],['Turnover — custom quote above sq ft',n('propertyManagementPricing.turnover.customQuoteAboveSqFt',{step:250})],['Day porter — custom quote above weekly hours',n('propertyManagementPricing.dayPorter.customQuoteAboveWeeklyHours',{step:5})]]); }
+  if(S.adminTab==='json') body = `<textarea class="input json" data-cfgjson="1" spellcheck="false">${esc(S.cfgJson||JSON.stringify(c,jsonOut,2))}</textarea><div class="row" style="margin-top:8px"><button type="button" class="btn btn-sm" data-action="applyJson">Apply JSON to draft</button></div>`;
+  return `<section class="admin"><div class="adm-h"><div><h2>${L.title}</h2><p class="small muted">${L.hide}</p></div><div class="row">${S.adminMsg?`<span class="small" style="color:var(--ink-2)">${esc(S.adminMsg)}</span>`:''}<button type="button" class="btn btn-sm" data-action="resetCfg">${L.reset}</button><button type="button" class="btn btn-sm btn-primary" data-action="saveCfg">${L.save}</button><button type="button" class="btn btn-sm btn-ghost" data-action="closeAdmin">${L.close}</button></div></div><div class="tabs">${Object.entries(tabs).map(([k,l])=>`<button type="button" aria-current="${S.adminTab===k}" data-action="adminTab" data-tab="${k}">${l}</button>`).join('')}</div><div class="panel"><div class="pb">${body}</div></div></section>`; }
+
+/* ---------------------------------------------------------------- 6. RENDER & EVENTS */
+const app = document.getElementById('app');
+function render(){ const L=t(); document.getElementById('brand-sub').textContent = L.sub; document.documentElement.lang = S.lang; document.querySelectorAll('.lang').forEach(b=>b.setAttribute('aria-pressed',b.dataset.lang===S.lang));
+  if(!S.q) S.q = newQuote(); const sc = screens(S.q), key = sc[Math.min(S.step,sc.length-1)], isResult = key==='result', errs = S.errors.map(e=>L.errs[e]||L.pm.errs[e]).filter(Boolean);
+  app.innerHTML = `<div class="progress"><span>${L.progress.replace('{n}',S.step+1).replace('{t}',sc.length)}</span><span class="bar"><i style="width:${(S.step+1)/sc.length*100}%"></i></span></div>${errs.length?`<div class="err" role="alert" aria-live="assertive">${errs.map(esc).join(' ')}</div>`:''}<div data-screen="${key}">${renderScreen(key)}</div>${S.admin?renderAdmin():''}
+<div class="nav"><div class="nav-in">${S.step>0?`<button type="button" class="btn btn-ghost" data-action="back">${L.back}</button>`:''}${isResult?`<button type="button" class="btn btn-primary" data-action="restart">${L.startOver}</button>`:key==='service'?'':`<button type="button" class="btn btn-primary" data-action="next">${sc[S.step+1]==='result'?L.getPrice:L.next}</button>`}</div></div>`;
+  window.scrollTo({top:0}); }
+const getP = (o,p) => p.split('.').reduce((a,k)=>a?.[k],o); function setP(o,p,v){ const ks=p.split('.'); let c=o; for(let i=0;i<ks.length-1;i++){ if(c[ks[i]]==null) c[ks[i]]={}; c=c[ks[i]]; } c[ks[ks.length-1]]=v; }
+function next(){ const sc = screens(S.q), key = sc[S.step]; const need = { size:['sqft','exactSqFt'], sizeExact:['sqft'], frequency:['frequency'], moveType:['moveType'], condition:['condition'], commercialFrequency:['frequency'], projectType:['projectType'], phase:['phase'], pcCondition:['condition'], addons:['carpetSqFt','windowCount'], location:['state'], pmType:['pmType'], pmPropertyType:['pmPropertyType'], pmUnits:['pmUnits'], pmFrequency:['pmFrequency','pmDays'], pmAreas:['pmAreas'], pmStaffing:['pmCleaners','pmHoursPerDay'], pmUnitType:['pmUnitType'], pmUnitSize:['pmBedrooms','pmBathrooms'], pmTurnType:['pmTurnType'], pmCondition:['pmCondition'], pmHours:['pmHours','pmCustomHours'], pmAddons:['pmAddonQty'] }[key]||[];
+  const all = validateQuote(cfg,S.q), errs = all.filter(e=>need.includes(e)); if(errs.length){ S.errors=errs; render(); return; } S.errors=[];
+  if(sc[S.step+1]==='result'){ if(all.length){ S.errors=all; render(); return; } S.result = calculateQuote(cfg,S.q); }
+  S.step++; if(sc[S.step]==='pmStaffing'){ const st = cfg.propertyManagementPricing.community.staffing; if(S.q.pm.cleaners==='') S.q.pm.cleaners = st.defaultCleaners; if(S.q.pm.hoursPerDay==='') S.q.pm.hoursPerDay = Math.max(st.defaultHoursPerDay, pmSuggestedHoursPerVisit(cfg,S.q.pm)); } render(); }
+document.addEventListener('click', e => {
+  const lang = e.target.closest('[data-lang]'); if(lang){ S.lang = lang.dataset.lang; render(); return; }
+  const set = e.target.closest('[data-set]'); if(set){ const p = set.dataset.set, v = set.dataset.value; if(v==='toggle') setP(S.q,p,!getP(S.q,p)); else { const cur = getP(S.q,p); setP(S.q,p, (/^\d+$/.test(v)&&p!=='tierIndex')?Number(v):v); if(p==='service' && cur!==v){ const svc = v; S.q = newQuote(); S.q.service = svc; } if(p==='pm.type' && cur!==v){ const keep = S.q.pm.type = v; S.q.pm = { ...newQuote().pm, type:keep }; } }
+    S.errors=[]; if(set.dataset.stay||v==='toggle'||p==='tierIndex'||p.startsWith('pc.options')) render(); else next(); return; }
+  const a = e.target.closest('[data-action]'); if(!a) return;
+  switch(a.dataset.action){
+    case 'next': next(); break; case 'back': S.errors=[]; S.step=Math.max(0,S.step-1); render(); break;
+    case 'restart': S.q=newQuote(); S.step=0; S.result=null; S.errors=[]; render(); break;
+    case 'allowEstimate': S.q.allowLargeEstimate=true; S.result=calculateQuote(cfg,S.q); render(); break;
+    case 'adminTab': S.adminTab=a.dataset.tab; S.adminMsg=''; render(); break;
+    case 'closeAdmin': S.admin=false; history.replaceState(null,'',location.pathname+location.search); render(); break;
+    case 'saveCfg': saveCompanyConfig(S.cfgDraft, COMPANY_ID); cfg=loadCompanyConfig(COMPANY_ID); S.cfgDraft=clone(cfg); S.cfgJson=''; if(S.result&&S.result.summary) S.result=calculateQuote(cfg,S.q); S.adminMsg=t().admin.saved; render(); break;
+    case 'resetCfg': if(confirm('Reset pricing settings to defaults?')){ safeDel('oneapp.pricingConfig.'+COMPANY_ID); cfg=loadCompanyConfig(COMPANY_ID); S.cfgDraft=clone(cfg); S.cfgJson=''; if(S.result) S.result=calculateQuote(cfg,S.q); render(); } break;
+    case 'applyJson': try{ S.cfgDraft = JSON.parse(S.cfgJson||document.querySelector('[data-cfgjson]').value, jsonIn); S.cfgJson=''; S.adminMsg='JSON applied to draft — save to persist.'; }catch(err){ S.adminMsg='JSON could not be parsed.'; } render(); break; }
+});
+document.addEventListener('input', e => { const el = e.target;
+  if(el.dataset.num){ const v = el.value===''?'':Number(el.value); if(el.dataset.num.startsWith('addOns.')) setP(S.q, el.dataset.num, Math.max(1,num(v,1))); else setP(S.q, el.dataset.num, v); return; }
+  if(el.dataset.text){ setP(S.q, el.dataset.text, el.value); return; }
+  if(el.dataset.cfg){ const n = el.value===''?0:Number(el.value); setP(S.cfgDraft, el.dataset.cfg, Number.isFinite(n)?(el.dataset.pct?n/100:n):0); return; }
+  if(el.dataset.cfgtext){ setP(S.cfgDraft, el.dataset.cfgtext, el.value.trim()); return; }
+  if(el.dataset.cfgjson) S.cfgJson = el.value; });
+document.addEventListener('change', e => { const el = e.target;
+  if(el.dataset.sel){ setP(S.q, el.dataset.sel, el.value); return; }
+  if(el.dataset.cfgsel){ setP(S.cfgDraft, el.dataset.cfgsel, el.value); render(); return; }
+  if(el.dataset.cfgbool){ setP(S.cfgDraft, el.dataset.cfgbool, el.checked); return; } });
+document.addEventListener('keydown', e => { if(e.key==='Enter' && e.target.matches('input[data-num], input[data-text]') && !S.admin){ e.preventDefault(); next(); } });
+window.addEventListener('hashchange', () => { S.admin = location.hash==='#admin'; render(); });
+render();
+/* Public API for the rest of One App (Supabase / CRM / proposal modules): */
+window.OneAppPricing = { DEFAULT_PRICING_CONFIG, loadCompanyConfig, saveCompanyConfig, calculateQuote, calculateRecommendedPrice, calculateLowPrice, calculatePremiumPrice, findSquareFootageTier, calculateStateFactor, calculateMarketFactor, calculateConditionFactor, calculateFrequencyPrice, calculateWindowPrice, calculateCarpetPrice, calculateAddons, calculatePostConstructionPrice, calculateProfitabilityFloor, roundCustomerPrice, getApplicableQuestions, getApplicableAddons, validateQuote, getConfig: () => cfg };
+</script>
+</body>
+</html>
